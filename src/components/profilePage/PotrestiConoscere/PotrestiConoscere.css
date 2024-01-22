@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: column; 
     align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
 }
 .second {
     color: #666666;
@@ -16,8 +18,14 @@
 }
 .potrestiConoscere h2 {
     font-size: 1em;
+    font-weight: 600;
 }
 .potrestiConoscere h2:first-of-type {
     margin-top: 20px;
 }
 
+.potrestiConoscere h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0;
+}

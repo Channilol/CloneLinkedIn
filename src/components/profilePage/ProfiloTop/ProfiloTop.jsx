@@ -2,9 +2,11 @@ import './ProfiloTop.css'
 import { Link } from 'react-router-dom'
 import EditProfile from '../EditProfile/EditProfile'
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 const ProfiloTop = () => {
     const [isEditOpen, setIsEditOpen] = useState(false)
+    const loggedUser = useSelector((state) => state.user.userFetch)
 
     const handleOpenEditPage = () => {
         setIsEditOpen(true)
@@ -27,10 +29,7 @@ const ProfiloTop = () => {
                 </svg>
             </div>
             <div className='profilePic'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#0a66c2" className="bi bi-camera-fill" viewBox="0 0 16 16">
-                    <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-                    <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
-                </svg>
+                {loggedUser ? (<img src={loggedUser.image} alt={loggedUser.name}/>) : (<p>Loading...</p>)}
             </div>
             <div className='editProfile'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#404040" className="bi bi-pencil" viewBox="0 0 16 16" onClick={() => handleOpenEditPage()}>
@@ -46,9 +45,9 @@ const ProfiloTop = () => {
                     <p>EPICODE</p>
                 </div>
                 <div className='profileMainText'>
-                    <h2>Team 6</h2>
-                    <p>Studente presso EPICODE, Epic education</p>
-                    <p>Perugia, Umbria, Italia • <Link to='/'>Informazioni di contatto</Link></p>
+                    <h2>{loggedUser.username}</h2>
+                    <p>{loggedUser.title} presso {loggedUser.area}</p>
+                    <p>{loggedUser.area} • <Link to='/'>Informazioni di contatto</Link></p>
                 </div>
                 <div className='profileButtons'>
                     <button>Disponibile per</button>

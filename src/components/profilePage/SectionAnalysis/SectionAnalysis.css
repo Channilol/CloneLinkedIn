@@ -1,14 +1,15 @@
 .FirDiv {
-  width: 65%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid #e0dfdb;
+  border-radius: 10px;
+  background-color: white;
 }
 .SecDiv {
-  width: 15%;
   margin: 15px;
 }
 .ThiDiv {
@@ -18,25 +19,34 @@
   justify-content: center;
   align-items: center;
 }
-h3{
-    margin: 10px;
+.FirDiv h3{
+  margin: 10px;
+  display: flex;
+  align-items: center;
 }
-a{
-    color: #e0dfdb;
+.FirDiv h3 i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
 }
-svg {
+.FirDiv a{
+  color: rgba(0,0,0,0.5);
+  font-size: 0.8em;
+}
+.FirDiv svg {
   vertical-align: bottom;
 }
-p:nth-of-type(1){
+.FirDiv p:nth-of-type(1){
     color: #e0dfdb;
 }
-p:nth-of-type(2){
+.FirDiv p:nth-of-type(2){
     font-weight: 600;
 }
-p {
+.FirDiv p {
   margin: 10px;
 }
 
-h2 {
+.FirDiv h2 {
   margin: 10px;
 }

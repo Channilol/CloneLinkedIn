@@ -3,6 +3,11 @@ import ProfiloTop from './ProfiloTop/ProfiloTop'
 import { getUserFetchAction } from '../../redux/actions'
 import { UseSelector, useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import Lingua from './lingua/Lingua'
+import PotrestiConoscere from './PotrestiConoscere/PotrestiConoscere'
+import InLearning from './InLearning/InLearning'
+import Risorse from './Risorse/Risorse'
+import SectionAnalysis from './SectionAnalysis/SectionAnlysis'
 
 const ProfilePage = () => {
     const loggedUser = useSelector((state) => state.user.userFetch)
@@ -28,9 +33,13 @@ const ProfilePage = () => {
         <div className='profilePage'>
             <div className='profilePageLeft'>
                 <ProfiloTop />
+                <Risorse/>
+                <SectionAnalysis/>
             </div>
             <div className='profilePageRight'>
-
+                <Lingua/>
+                <PotrestiConoscere/>
+                <InLearning/>
             </div>
         </div>
     )

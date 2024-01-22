@@ -3,6 +3,17 @@ h1,h2,h3,h4,h5,h6,p,ul,li,a,button,input {
   color: #1e1e1e;
   margin: 0;
   padding: 0;
+  line-height: 1.5!important;
   list-style: none;
   text-decoration: none;
+}
+
+p {
+  margin-bottom: 0!important;
+}
+
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #f4f2ee;
 }
