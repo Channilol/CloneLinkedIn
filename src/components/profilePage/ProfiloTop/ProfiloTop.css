@@ -4,6 +4,7 @@
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    z-index: 5;
 }
 
 .profiloTop .photoBg {
@@ -85,7 +86,7 @@
 
 .profiloTop .profileText .profileMainText p:last-of-type {
     color: rgba(0,0,0,0.5);
-    font-size: 0.8rem;
+    font-size: 0.8em;
     margin: 5px 0;
 }
 
