@@ -1,14 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
-import SectionAnalysis from "./components/Header/SectionAnalysis/SectionAnlysis";
-import Risorse from "./components/Header/Risorse/Risorse";
+import './App.css';
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import ProfilePage from './components/profilePage/ProfilePage';
 
 function App() {
   return (
-    <div className="App">
-      <SectionAnalysis />
-      <Risorse />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path='/' element={<ProfilePage/>}/>
+        </Routes>
+      </div>  
+    </BrowserRouter>
   );
 }
 

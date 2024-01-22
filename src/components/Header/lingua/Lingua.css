@@ -1,0 +1,30 @@
+#container {
+  width: 300px;
+  padding: 20px;
+  display: none;
+  border: 1px solid #e0dfdb;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.pen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 0px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  #container {
+    display: block;
+  }
+}
