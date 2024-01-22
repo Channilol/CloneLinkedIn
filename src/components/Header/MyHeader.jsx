@@ -1,6 +1,4 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './MyHeader.css'
+/* import './MyHeader.css'
 
 
 const MyHeader = () => {
@@ -118,4 +116,4 @@ const MyHeader = () => {
     )
 }
 
-export default MyHeader
+export default MyHeader */
