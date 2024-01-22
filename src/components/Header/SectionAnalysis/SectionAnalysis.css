@@ -1,0 +1,42 @@
+.FirDiv {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #e0dfdb;
+}
+.SecDiv {
+  width: 15%;
+  margin: 15px;
+}
+.ThiDiv {
+  width: 100%;
+  border-top: 1px solid #e0dfdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h3{
+    margin: 10px;
+}
+a{
+    color: #e0dfdb;
+}
+svg {
+  vertical-align: bottom;
+}
+p:nth-of-type(1){
+    color: #e0dfdb;
+}
+p:nth-of-type(2){
+    font-weight: 600;
+}
+p {
+  margin: 10px;
+}
+
+h2 {
+  margin: 10px;
+}
