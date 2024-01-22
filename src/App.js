@@ -1,11 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import SectionAnalysis from './components/Header/SectionAnalysis/SectionAnlysis';
+import logo from "./logo.svg";
+import "./App.css";
+import SectionAnalysis from "./components/Header/SectionAnalysis/SectionAnlysis";
+import Risorse from "./components/Header/Risorse/Risorse";
 
 function App() {
   return (
     <div className="App">
-<SectionAnalysis />
+      <SectionAnalysis />
+      <Risorse />
     </div>
   );
 }
