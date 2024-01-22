@@ -1,0 +1,58 @@
+.FirstDiv {
+    width: 65%;
+    margin-top: 10px;
+margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #e0dfdb;
+  }
+  .SecondDiv1 {
+    width: 100%;
+    margin-left:15px;
+  }
+  .ThiDiv {
+    width: 100%;
+    border-top: 1px solid #e0dfdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h3{
+      margin: 10px;
+  }
+  a{
+      color: #e0dfdb;
+  }
+  svg {
+    vertical-align: bottom;
+    margin-right: 10px;
+  }
+  p:nth-of-type(1){
+      color: #e0dfdb;
+  }
+  p:nth-of-type(2),:nth-of-type(4){
+      font-weight: 600;
+  }
+
+  h2 {
+    margin: 10px;
+  }
+ 
+  button{
+    border: none;
+    background-color: #e0dfdb;
+    width: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .spaceP{
+    margin-left: 3% ;
+  }
+.hrDiv{
+    height: 1px;
+    background-color: #e0dfdb;
+    width: 96%;
+    
+}
