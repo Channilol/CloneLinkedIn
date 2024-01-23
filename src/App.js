@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-do
 import ProfilePage from './components/profilePage/ProfilePage';
 import Footer from './components/footer/Footer';
 import MyHeader from './components/MyHeader/MyHeader';
+import HomepagePROVA from './components/homepagePROVA/HomepagePROVA';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <div className="App">
         <MyHeader/>
         <Routes>
-          <Route path='/' element={<ProfilePage/>}/>
+          <Route path='/' element={<HomepagePROVA />} />
+          <Route path='/profile/:user' element={<ProfilePage/>}/>
         </Routes>
         <Footer/>
       </div>  

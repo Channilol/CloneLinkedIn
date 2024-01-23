@@ -1,8 +1,8 @@
 import React from 'react';
 import './EducationComponent.css'; 
-import logouni from '../Assets/logouni.png'
-import pen from '../Assets/pen_edit_icon_177296.png'
-import Plus from '../Assets/Plus.png'
+import logouni from '../../Assets/logouni.png'
+import pen from '../../Assets/pen_edit_icon_177296.png'
+import Plus from '../../Assets/Plus.png'
 
 const EducationComponent = () => {
   return (

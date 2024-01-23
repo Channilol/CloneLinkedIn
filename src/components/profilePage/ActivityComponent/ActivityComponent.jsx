@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import pen from '../Assets/pen_edit_icon_177296.png';
+import pen from '../../Assets/pen_edit_icon_177296.png';
 import './ActivityComponent.css'
 
 const ActivityComponent = () => {
@@ -12,7 +12,7 @@ const ActivityComponent = () => {
       <div className='post-btn'><button className="create-post-button">
         Crea un post
       </button>
-      <img src={pen} alt=""  />
+      <img src={pen} alt="" className='penImg' />
       </div>
       </div>
       
