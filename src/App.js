@@ -2,13 +2,13 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ProfilePage from './components/profilePage/ProfilePage';
 import Footer from './components/footer/Footer';
-/* import MyHeader from './components/Header/MyHeader'; */
+import MyHeader from './components/MyHeader/MyHeader';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <MyHeader/> */}
+        <MyHeader/>
         <Routes>
           <Route path='/' element={<ProfilePage/>}/>
         </Routes>
