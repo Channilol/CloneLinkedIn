@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ProfilePage from './components/profilePage/ProfilePage';
-import Footer from './components/footer/Footer';
 import MyHeader from './components/MyHeader/MyHeader';
 import HomepagePROVA from './components/homepagePROVA/HomepagePROVA';
+import Homepage from './components/Homepage/Homepage';
 
 function App() {
   return (
@@ -11,10 +11,10 @@ function App() {
       <div className="App">
         <MyHeader/>
         <Routes>
-          <Route path='/' element={<HomepagePROVA />} />
+          <Route path='/' element={<Homepage/>}/>
+          <Route path='/homepageprova' element={<HomepagePROVA />} />
           <Route path='/profile/:user' element={<ProfilePage/>}/>
         </Routes>
-        <Footer/>
       </div>  
     </BrowserRouter>
   );

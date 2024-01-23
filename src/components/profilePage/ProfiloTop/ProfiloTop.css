@@ -52,6 +52,10 @@
     transition: transform 0.2s ease-in-out;
 }
 
+.profiloTop .editPhoto label {
+    cursor: pointer;
+}
+
 .profiloTop .editPhoto svg {
     transition: transform 0.2s ease-in-out;
 }
@@ -149,6 +153,10 @@
 
 .profileText .profileMainText a:hover {
     text-decoration: underline;
+}
+
+.inputFile {
+    display: none;
 }
 
 @media screen and (min-width:992px) {

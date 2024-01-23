@@ -26,3 +26,71 @@
         top: 50%
     }
 }
+
+.newExperience form {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.newExperience > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0dfdb;
+}
+
+.newExperience > div:first-of-type button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 3px solid #e0dfdb;
+    transition: border 0.2s ease-in-out, transform 0.2s ease-in-out
+}
+
+.newExperience > div:first-of-type button:hover {
+    border: 1px solid #e0dfdb;
+    transform: scale(1.1);
+}
+
+.newExperience form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.newExperience form input {
+    height: 30px;
+    border: 1px solid #e0dfdb;
+    border-radius: 5px;
+}
+
+.newExperience form input:focus {
+    outline: 2px solid #e0dfdb;
+}
+
+.newExperience form label {
+    margin-bottom: 5px;
+}
+
+.newExperience form button {
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: #0a66c2;
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+    align-self: center;
+    transition: transform 0.1s ease-in-out
+}
+
+.newExperience form button:hover {
+    transform: scale(1.1);
+}

@@ -12,7 +12,7 @@ const EditExperience = ({experience, close}) => {
         endDate: '',
         description: '',
         area: ''
-    })
+      })
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -47,42 +47,49 @@ const EditExperience = ({experience, close}) => {
 
     return (
         <div className='editExperience'>
-            <button onClick={close}>Close</button>
-            <h1>Modifica esperienza lavorativa</h1>
+            <div>
+                <h1>Modifica esperienza lavorativa</h1>
+                <button onClick={close}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,0.7)" className="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </button>
+            </div>
+            
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <label htmlFor="role">Ruolo:</label>
-                    <input type="text" name="role" id="role" value={experienceData.role} onChange={(e) => setExperienceData({
+                    <input type="text" name="role" id="role" value={experienceData.role || ''} onChange={(e) => setExperienceData({
                         ...experienceData, role: e.target.value
                     })}/>
                 </div>
                 <div>
                     <label htmlFor="company">Azienda:</label>
-                    <input type="text" name="company" id="company" value={experienceData.company} onChange={(e) => setExperienceData({
+                    <input type="text" name="company" id="company" value={experienceData.company || ''} onChange={(e) => setExperienceData({
                         ...experienceData, company: e.target.value
                     })}/>
                 </div>
                 <div>
                     <label htmlFor="startDate">Data di inizio:</label>
-                    <input type="date" name="startDate" id="startDate" value={experienceData.startDate} onChange={(e) => setExperienceData({
+                    <input type="date" name="startDate" id="startDate" value={experienceData.startDate || ''} onChange={(e) => setExperienceData({
                         ...experienceData, startDate: e.target.value
                     })}/>
                 </div>
                 <div>
                     <label htmlFor="endDate">Fino a:</label>
-                    <input type="date" name="endDate" id="endDate" value={experienceData.endDate} onChange={(e) => setExperienceData({
+                    <input type="date" name="endDate" id="endDate" value={experienceData.endDate || ''} onChange={(e) => setExperienceData({
                         ...experienceData, endDate: e.target.value
                     })}/>
                 </div>
                 <div>
                    <label htmlFor="description">Descrizione:</label>
-                    <input type="text" name="description" id="description" value={experienceData.description} onChange={(e) => setExperienceData({
+                    <input type="text" name="description" id="description" value={experienceData.description || ''} onChange={(e) => setExperienceData({
                         ...experienceData, description: e.target.value
                     })}/> 
                 </div>
                 <div>
                     <label htmlFor="area">Zona:</label>
-                    <input type="text" name="area" id="area" value={experienceData.area} onChange={(e) => setExperienceData({
+                    <input type="text" name="area" id="area" value={experienceData.area || ''} onChange={(e) => setExperienceData({
                         ...experienceData, area: e.target.value
                     })}/>
                 </div> 

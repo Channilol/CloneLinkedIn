@@ -5,6 +5,7 @@ import NewExperience from '../NewExperience/NewExperience'
 import { getUserExperiencesAction } from '../../../redux/actions'
 import EditExperience from '../../EditExperience/EditExperience'
 import { useParams } from 'react-router-dom'
+import ExperienceCard from '../../ExperienceCard/ExperienceCard'
 
 const Experiences = () => {
     const [isNewExperienceOn, setIsNewExperienceOn] = useState(false)
@@ -60,7 +61,10 @@ const Experiences = () => {
             {experiences && experiences.length > 0 ? (
                 experiences.map((experience) => {
                     return (
-                        <div key={experience._id}>
+                        <div  key={experience._id}>
+                            <ExperienceCard experienceData={experience} deleteFunc={() => deleteUserExperience(experience._id)} openEdit={handleOpenEditExperience} />
+                            {isEditExperienceOn ? (<EditExperience experience={experience} close={handleCloseEditExperience} />) : ''}
+                            {/* <div key={experience._id}>
                         <p>{experience.role} • {experience.company} | {iduser.user === 'me' ? (
                             <>
                             <button onClick={() => handleOpenEditExperience()}>Modifica</button> | 
@@ -68,6 +72,7 @@ const Experiences = () => {
                             </>
                             ) : ''}</p>
                         {isEditExperienceOn ? (<EditExperience experience={experience} close={handleCloseEditExperience} />) : ''}
+                        </div> */}
                         </div>
                     )
                 })
