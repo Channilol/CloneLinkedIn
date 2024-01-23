@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <MyHeader/>
+       <MyHeader />
         <Routes>
           <Route path='/' element={<ProfilePage/>}/>
         </Routes>

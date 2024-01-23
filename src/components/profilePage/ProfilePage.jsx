@@ -33,7 +33,7 @@ const ProfilePage = () => {
         <div className='profilePage'>
             <div className='profilePageLeft'>
                 <ProfiloTop />
-                <Risorse/>
+                <Risorse/> 
                 <SectionAnalysis/>
             </div>
             <div className='profilePageRight'>
