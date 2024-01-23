@@ -10,10 +10,12 @@
     border-radius: 10px;
     margin-bottom: 10px;
     background-color: white;
+    box-sizing: border-box;
   }
   .SecondDiv1 {
     width: 100%;
     margin-left:15px;
+    box-sizing: border-box;
   }
   .ThiDiv {
     width: 100%;
