@@ -1,18 +1,20 @@
-
 import './App.css';
-import ActivityComponent from './components/ActivityComponent/ActivityComponent';
-import EducationComponent from './components/EducationComponent/EducationComponent';
-
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import ProfilePage from './components/profilePage/ProfilePage';
+import Footer from './components/footer/Footer';
+import MyHeader from './components/MyHeader/MyHeader';
 
 function App() {
   return (
-    <div className="App">
-      <ActivityComponent/>
-      <EducationComponent/>
-      
-    </div>
-
-    
+    <BrowserRouter>
+      <div className="App">
+        <MyHeader/>
+        <Routes>
+          <Route path='/' element={<ProfilePage/>}/>
+        </Routes>
+        <Footer/>
+      </div>  
+    </BrowserRouter>
   );
 }
 

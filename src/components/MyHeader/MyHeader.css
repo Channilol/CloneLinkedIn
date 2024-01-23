@@ -1,0 +1,211 @@
+.custom-navbar {
+    background-color: white;
+    border: 1px solid #e0dfdb;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.custom-navbar > svg:first-of-type {
+    min-width: 37px;
+    min-height: 37px;
+}
+
+#logoNavSvg{
+    margin-left: 5%;
+    margin-right: 20px;
+}
+
+
+#boxSearchNav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputSearchNav {
+    padding: 10px;
+    padding-left: 35px;
+    width: 200px;
+    height: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    display: none;
+    align-items: center;
+    background-color: #edf3f8;
+}
+
+#iconSearchNav {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+}
+
+#navbarCustom {
+    display: none;
+}
+
+@media screen and (min-width:675px) {
+    #navbarCustom {
+        display: flex
+    }
+}
+
+@media screen and (min-width:850px) {
+    .inputSearchNav {
+        display: flex;
+    }
+
+    #iconSearchNav {
+        display: flex;
+    }
+
+    #boxSearchNav .divIconsNav {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #boxSearchNav {
+        margin-right: 15%;
+    }
+}
+
+.divIconsNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.divIconsNav:hover .textIconsNav,
+.dropdown-icon:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.divIconsNav:hover .changeColorSvg,
+.dropdown-icon:hover .changeColorSvg{
+    fill: black;
+}
+
+.textIconsNav {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.NomeSectionDropdown {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+.buttonDropdown {
+    width: 180px;
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px 20px 20px 20px;
+    background-color: transparent;
+    color: #0a66c2;
+    border-color: #0a66c2;
+    font-size: 12px;
+}
+
+.buttonDropdown:hover {
+    outline: solid 1px #0a66c2;
+}
+
+.linkDropdown {
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 10px;
+    color: #8d8d8d;
+}
+
+.linkDropdown:hover {
+    text-decoration: underline;
+}
+
+.titleDropdown {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.containerIconsNav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.customNavDropdown {
+    font-size: 13px;
+}
+
+.dropdown-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    top: 65px;
+    left: 0px;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100000;
+}
+
+.dropdown-content a {
+    color: #8d8d8d;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.boxDropdown {
+    display: flex;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.bi-person-circle,
+.bi-grid-3x3-gap-fill{
+    margin-top: 5px;
+}
+
+.bi-chevron-down {
+    margin-left: 3px;
+}
+
+#borderContainerIconsNav {
+    border-left: solid 1px #e0dfdb;
+}
+
+.firstSectionDropdown{
+    display: flex;
+    margin: 10px;
+}
+
+.textFirstSection{
+    margin-left: 10px;
+}
+
+.notAvaible{
+    padding: 15px;
+}
