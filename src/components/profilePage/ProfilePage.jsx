@@ -13,6 +13,7 @@ import ActivityComponent from './ActivityComponent/ActivityComponent'
 import EducationComponent from './EducationComponent/EducationComponent'
 import { getUserExperiencesAction } from '../../redux/actions'
 import { useParams } from 'react-router-dom'
+import Footer from '../footer/Footer'
 
 const ProfilePage = () => {
     const iduser = useParams();
@@ -38,6 +39,7 @@ const ProfilePage = () => {
     },[loggedUser])
 
     return (
+        <>
         <div className='profilePage'>
             <div className='profilePageLeft'>
                 <ProfiloTop />
@@ -57,6 +59,8 @@ const ProfilePage = () => {
                 <InLearning/>
             </div>
         </div>
+        <Footer/>
+        </>
     )
 }
 

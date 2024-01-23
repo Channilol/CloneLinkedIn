@@ -2,17 +2,51 @@ import './ProfiloTop.css'
 import { Link } from 'react-router-dom'
 import EditProfile from '../EditProfile/EditProfile'
 import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { getUserFetchAction } from '../../../redux/actions'
 
 const ProfiloTop = () => {
     const [isEditOpen, setIsEditOpen] = useState(false)
+    const [profilePic, setProfilePic] = useState(null)
     const iduser = useParams()
     const loggedUser = useSelector((state) => state.user.userFetch)
+    const dispatch = useDispatch()
     
     useEffect(() => {
         console.log(iduser.user)
     },[])
+
+    const handleProfilePicChange = (e) => {
+        setProfilePic(e.target.files[0])
+    }
+
+    const handleProfilePicUpload = async (e) => {
+        e.preventDefault()
+        if (profilePic) {
+            const formData = new FormData()
+            formData.append('editProfilePic', profilePic, profilePic.name)
+            try {
+                const res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${loggedUser._id}/picture`, {
+                    method: 'POST',
+                    headers: {
+                      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2VkMzYwMGJlMTAwMTgzYTg2OTgiLCJpYXQiOjE3MDU5MTgxNjMsImV4cCI6MTcwNzEyNzc2M30.7DYncSKPLwIy7aJwIhh6w0OhrQZ4E4_M74Hg7oUY_DE',
+                      'Content-Type': 'application/json'
+                    },
+                    body: formData,
+                  })
+                  if (res.ok) {
+                    alert('Immagine caricata con successo!')
+                    dispatch(getUserFetchAction(`https://striveschool-api.herokuapp.com/api/profile/me`))
+                  } else {
+                    console.log('Errore nel caricamento dati')
+                  }
+            } catch(err) {
+                console.log('Errore:', err)
+            }     
+        }
+    }
+
 
     const handleOpenEditPage = () => {
         setIsEditOpen(true)
@@ -30,11 +64,15 @@ const ProfiloTop = () => {
             </div>
             {iduser.user === 'me' ? (
                 <div className='editPhoto'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0a66c2" className="bi bi-camera-fill" viewBox="0 0 16 16">
-                        <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-                        <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
-                    </svg>
-                </div>
+                    <label htmlFor="editProfilePic">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0a66c2" className="bi bi-camera-fill" viewBox="0 0 16 16">
+                            <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                            <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
+                        </svg>
+                    </label>
+                    <input className='inputFile' type='file' id='editProfilePic' name='editProfilePic' accept='image/png, image/jpg' onChange={(e) => handleProfilePicChange(e)} />
+                    <button onClick={(e) => handleProfilePicUpload(e)}>Invia foto</button>
+                </div>         
             ) : ''}
             <div className='profilePic'>
                 {loggedUser ? (<img src={loggedUser.image} alt={loggedUser.name}/>) : (<p>Loading...</p>)}

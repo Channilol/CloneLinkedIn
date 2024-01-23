@@ -1,0 +1,46 @@
+.homepage {
+    width: 100%;
+    max-width: 576px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width:768px) {
+    .homepage {
+        flex-direction: row;
+        max-width: 700px;
+    }
+    .homepageLeft {
+        max-width: 250px;
+    }
+    .homepageCenter {
+        max-width: 450px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .homepage {
+        max-width: 950px;
+    }
+    .homepage .homepageCenterAndRight {
+        display: flex;
+    }
+    .homepageRight {
+        max-width: 300px;
+    }
+    .homepageCenter {
+        max-width: 400px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .homepage {
+        max-width: 1150px;
+    }
+    .homepageCenter {
+        max-width: 600px;
+    }
+}
