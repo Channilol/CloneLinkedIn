@@ -5,6 +5,7 @@
     background-color: white;
     position: relative;
     overflow: hidden;
+    margin-bottom: 10px;
     z-index: 5;
 }
 

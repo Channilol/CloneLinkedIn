@@ -1,0 +1,28 @@
+.editExperience {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 740px;
+    height: 90%;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #e0dfdb;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    animation: editExperienceAnimation 0.3s ease-in-out forwards;
+}
+
+@keyframes editExperienceAnimation {
+    from {
+        opacity: 0;
+        top: 55%
+    }
+    to {
+        opacity: 1;
+        top: 50%
+    }
+}
