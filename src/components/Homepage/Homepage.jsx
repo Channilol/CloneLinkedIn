@@ -1,4 +1,5 @@
 import './Homepage.css'
+import Notizie from './Notizie/Notizie'
 
 const Homepage = () => {
     return (
@@ -12,6 +13,7 @@ const Homepage = () => {
                 </div>
                 <div className='homepageRight'>
                     {/* RIGHT */}
+                    <Notizie />
                 </div>
             </div>
         </div>
