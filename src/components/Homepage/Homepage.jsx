@@ -1,3 +1,4 @@
+import ConsigliPerTe from './ConsigliPerte/ConsigliPerTe'
 import './Homepage.css'
 
 const Homepage = () => {
@@ -8,6 +9,7 @@ const Homepage = () => {
             </div>
             <div className='homepageCenterAndRight'>
                 <div className='homepageCenter'>
+                    <ConsigliPerTe />
                     {/* CENTER */}
                 </div>
                 <div className='homepageRight'>
