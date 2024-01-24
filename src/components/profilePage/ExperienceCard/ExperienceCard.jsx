@@ -3,6 +3,14 @@ import { useParams } from 'react-router-dom'
 
 const ExperienceCard = ({experienceData, openEdit, deleteFunc}) => {
     const iduser = useParams();
+    const dataISO = experienceData.startDate;
+    const data = new Date(dataISO);
+
+    const giorno = data.getDate();
+    const mese = data.getMonth() + 1; // I mesi in JavaScript sono zero-based, quindi aggiungi 1
+    const anno = data.getFullYear();
+
+    const dataFormattata = `${giorno}-${mese}-${anno}`;
 
     return (
         <div className='experienceCard'>
@@ -11,7 +19,7 @@ const ExperienceCard = ({experienceData, openEdit, deleteFunc}) => {
             </div>
             <div className='experienceCardRight'>
                 <h2>{experienceData.role}</h2>
-                <p>{experienceData.company} - {experienceData.startDate} {experienceData.endDate ? experienceData.endDate : 'ad oggi.'}</p>
+                <p>{experienceData.company}, dal {dataFormattata} {experienceData.endDate ? ' al ' + experienceData.endDate : 'ad oggi.'}</p>
                 <p>{experienceData.area}</p>
             </div>
             {iduser.user === '65ae3ed3600be100183a8698' ? (

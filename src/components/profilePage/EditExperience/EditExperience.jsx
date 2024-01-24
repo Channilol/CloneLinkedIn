@@ -18,11 +18,12 @@ const EditExperience = ({experience, close}) => {
     useEffect(() => {
         setExperienceData(experience)
         console.log(experience)
+        console.log(loggedUser._id)
     },[])
 
     const handleEditExperience = async (data) => {
         try {
-            const res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${loggedUser}/experiences/${experience._id}`, {
+            const res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/65ae3ed3600be100183a8698/experiences/${experience._id}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2VkMzYwMGJlMTAwMTgzYTg2OTgiLCJpYXQiOjE3MDU5MTgxNjMsImV4cCI6MTcwNzEyNzc2M30.7DYncSKPLwIy7aJwIhh6w0OhrQZ4E4_M74Hg7oUY_DE',
@@ -32,7 +33,7 @@ const EditExperience = ({experience, close}) => {
             })
             if(res.ok) {
                 alert('Profilo salvato con successo!')
-                dispatch(getUserExperiencesAction(`https://striveschool-api.herokuapp.com/api/profile/${loggedUser._id}/experiences`))
+                dispatch(getUserExperiencesAction('https://striveschool-api.herokuapp.com/api/profile/65ae3ed3600be100183a8698/experiences'))
             }
         } catch(err) {
             console.log('Errore:', err)
