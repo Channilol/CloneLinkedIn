@@ -1,3 +1,4 @@
+import ConsigliPerTe from './ConsigliPerte/ConsigliPerTe'
 import './Homepage.css'
 import GruppiEventiHastag from './GruppiEventiHastag/GruppiEventiHastag'
 import Minifooter from './MiniFooter/MiniFooter'
@@ -26,6 +27,7 @@ const Homepage = () => {
             </div>
             <div className='homepageCenterAndRight'>
                 <div className='homepageCenter'>
+                    <ConsigliPerTe />
                     {/* CENTER */}
                     
                 </div>
