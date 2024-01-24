@@ -1,5 +1,6 @@
 import "./Jobspage.css"
 import MyOfferte from "./MyOfferte/MyOfferte";
+import RicercheSuggerite from "./RicercheSuggerite/RicercheSuggerite";
 
 const Jobspage = () => {
     return (
@@ -10,6 +11,7 @@ const Jobspage = () => {
             </div>
             <div className='jobspageCenterAndRight'>
                 <div className='jobspageCenter'>
+                <RicercheSuggerite />
                     {/* CENTER */}
                 </div>
                 <div className='jobspageRight'>
