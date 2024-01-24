@@ -1,5 +1,6 @@
 import "./Jobspage.css"
 import MyOfferte from "./MyOfferte/MyOfferte";
+import SelezioneInCorso from "./SelezioneInCorso/SelezioneInCorso";
 
 const Jobspage = () => {
     return (
@@ -11,6 +12,7 @@ const Jobspage = () => {
             <div className='jobspageCenterAndRight'>
                 <div className='jobspageCenter'>
                     {/* CENTER */}
+                   <SelezioneInCorso />
                 </div>
                 <div className='jobspageRight'>
                     {/* RIGHT */}

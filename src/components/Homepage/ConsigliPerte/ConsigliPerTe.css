@@ -43,7 +43,6 @@ color: #333;
     margin-left: 24%;
     display: flex;
   }
-
 .cardConsigli {
     display: flex;
     max-width: 100%;
@@ -54,7 +53,6 @@ color: #333;
     margin-left: 3%;
     margin-right: 3%;
 }
-
 .cardConsigli:last-child{
   display: flex;
   max-width: 100%;
