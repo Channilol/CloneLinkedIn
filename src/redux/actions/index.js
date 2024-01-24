@@ -12,7 +12,7 @@ export const getUserExperiencesAction = (url) => {
                 },
               })
             if (res.ok) {
-                console.log('experiences fetchate con successo')
+                console.log('experiences loggedUser fetchate con successo')
                 const data = await res.json()
                 dispatch({
                     type: GET_USER_EXPERIENCES,
