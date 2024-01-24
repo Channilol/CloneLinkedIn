@@ -43,7 +43,7 @@ const ProfilePage = () => {
         <div className='profilePage'>
             <div className='profilePageLeft'>
                 <ProfiloTop />
-                {iduser.user === 'me' ? (
+                {iduser.user === '65ae3ed3600be100183a8698' ? (
                     <>
                     <Risorse/>
                     <SectionAnalysis/>
@@ -54,7 +54,7 @@ const ProfilePage = () => {
                 <EducationComponent/>
             </div>
             <div className='profilePageRight'>
-                {iduser.user === 'me' ? (<Lingua/>) : ''}        
+                {iduser.user === '65ae3ed3600be100183a8698' ? (<Lingua/>) : ''}        
                 <PotrestiConoscere/>
                 <InLearning/>
             </div>

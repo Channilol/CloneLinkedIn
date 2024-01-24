@@ -1,5 +1,5 @@
 .homepage {
-    width: 100%;
+    width: 100vw;
     max-width: 576px;
     display: flex;
     flex-direction: column;
