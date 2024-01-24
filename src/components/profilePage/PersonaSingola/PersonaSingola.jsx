@@ -1,14 +1,33 @@
 import './PersonaSingola.css'
-const PersonaSingola = () => {
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { getUserFetchAction } from '../../../redux/actions';
+
+const PersonaSingola = ({userData}) => {
+  const loggedUser = useSelector((state) => state.user.userFetch)
+  let userId = ''
+  if(userData) {
+    userId = userData._id
+  }
+
+  const handleNavigate = async () => {
+    await dispatch(getUserFetchAction(`https://striveschool-api.herokuapp.com/api/profile/${userData._id}`))
+    navigate('/profile/')
+  }
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   return (
     <div className="personaSingola">
       <div className="imagineHolder">
-        <img className="userImg" src="https://img.freepik.com/free-photo/portrait-beautiful-young-woman-standing-grey-wall_231208-10760.jpg" alt="prova" />
+        <img className="userImg" src={userData.image} alt="userImg" onClick={() => navigate(`/profile/${userId}`)}/>
       </div>
       <div className="information">
         <div className="first">
-          <h3>Prova Prova</h3>
-          <div className='primoP'><p>prova prova prova prova prova prova</p></div>
+          <h3 onClick={() => navigate(`/profile/${userData._id}`)}>{userData.name}</h3>
+          <div className='primoP'><p>{userData.bio}</p></div>
         </div>
         <div className="informationBtn">
           <button>

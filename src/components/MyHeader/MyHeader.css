@@ -56,7 +56,7 @@
     }
 }
 
-@media screen and (min-width:850px) {
+@media screen and (min-width:900px) {
     .inputSearchNav {
         display: flex;
     }
@@ -70,7 +70,7 @@
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1110px) {
     #boxSearchNav {
         margin-right: 15%;
     }

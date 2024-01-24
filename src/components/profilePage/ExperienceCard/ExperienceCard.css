@@ -11,6 +11,10 @@
     width: 75px;
 }
 
+.experienceCard .experienceCardLeft img {
+    width: 100%;
+}
+
 .experienceCard .experienceCardRight {
     width: calc(100% - 75px);
 }
