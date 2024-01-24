@@ -1,10 +1,11 @@
 import './Homepage.css'
+import WelcomeMessage from './WelcomeMessage/WelcomeMessage'
 
 const Homepage = () => {
     return (
         <div className='homepage'>
             <div className='homepageLeft'>
-                {/* LEFT */}
+                {<WelcomeMessage/>}
             </div>
             <div className='homepageCenterAndRight'>
                 <div className='homepageCenter'>
