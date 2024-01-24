@@ -1,5 +1,6 @@
 import './Homepage.css'
-import FillerProva from './FillerProva'
+import Notizie from './Notizie/Notizie'
+
 
 const Homepage = () => {
     return (
@@ -15,7 +16,7 @@ const Homepage = () => {
                 </div>
                 <div className='homepageRight'>
                     {/* RIGHT */}
-                    <FillerProva/>
+                    <Notizie />
                 </div>
             </div>
         </div>
