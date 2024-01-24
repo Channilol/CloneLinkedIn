@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { getUserFetchAction } from '../../../redux/actions'
 import { useNavigate } from 'react-router'
 
-const EditProfile = ({close}) => {
+const EditProfile = ({close, }) => {
     const loggedUser = useSelector((state) => state.user.userFetch)
     const [editedProfile, setEditedProfile] = useState({
         name: '',

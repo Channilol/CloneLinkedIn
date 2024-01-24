@@ -14,7 +14,7 @@ const ExperienceCard = ({experienceData, openEdit, deleteFunc}) => {
                 <p>{experienceData.company} - {experienceData.startDate} {experienceData.endDate ? experienceData.endDate : 'ad oggi.'}</p>
                 <p>{experienceData.area}</p>
             </div>
-            {iduser.user === 'me' ? (
+            {iduser.user === '65ae3ed3600be100183a8698' ? (
             <div className='editAndDeleteBtns'>
                 <button onClick={openEdit}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-pencil-square" viewBox="0 0 16 16">

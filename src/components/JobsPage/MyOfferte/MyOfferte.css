@@ -1,0 +1,33 @@
+#offerte {
+    border: 1.5px solid #e0dfdb;
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px 10px 10px 15px;
+}
+
+.lavori {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.lavori p {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.pubblicaOfferta {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid rgb(95, 95, 226);
+    border-radius: 25px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 15px;
+    color: rgb(95, 95, 226);
+}
+
+.pubblicaOfferta p {
+    color: rgb(95, 95, 226);
+    text-align: center;
+    padding-left: 30px;
+}
