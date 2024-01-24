@@ -6,6 +6,7 @@ import BigFooter from './BigFooter/BigFooter'
 import { useState } from 'react'
 import WelcomeMessage from './WelcomeMessage/WelcomeMessage'
 import Notizie from './Notizie/Notizie'
+import CreateNewPost from './createNewPost/CreateNewPost'
 
 
 const Homepage = () => {
@@ -27,6 +28,7 @@ const Homepage = () => {
             </div>
             <div className='homepageCenterAndRight'>
                 <div className='homepageCenter'>
+                    <CreateNewPost/>
                     <ConsigliPerTe />
                     {/* CENTER */}
                     
