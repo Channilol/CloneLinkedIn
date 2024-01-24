@@ -5,6 +5,7 @@
     background-color: white;
     position: relative;
     overflow: hidden;
+    margin-bottom: 10px;
     z-index: 5;
 }
 
@@ -49,6 +50,10 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease-in-out;
+}
+
+.profiloTop .editPhoto label {
+    cursor: pointer;
 }
 
 .profiloTop .editPhoto svg {
@@ -148,6 +153,10 @@
 
 .profileText .profileMainText a:hover {
     text-decoration: underline;
+}
+
+.inputFile {
+    display: none;
 }
 
 @media screen and (min-width:992px) {

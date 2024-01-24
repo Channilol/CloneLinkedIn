@@ -1,18 +1,22 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ProfilePage from './components/profilePage/ProfilePage';
-import Footer from './components/footer/Footer';
 import MyHeader from './components/MyHeader/MyHeader';
+import HomepagePROVA from './components/homepagePROVA/HomepagePROVA';
+import Homepage from './components/Homepage/Homepage';
+import Jobspage from './components/JobsPage/Jobspage';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-       <MyHeader />
+        <MyHeader/> 
         <Routes>
-          <Route path='/' element={<ProfilePage/>}/>
+          <Route path='/' element={<Homepage/>}/>
+          <Route path='/jobspage' element={<Jobspage />} />
+          <Route path='/homepageprova' element={<HomepagePROVA />} />
+          <Route path='/profile/:user' element={<ProfilePage/>}/>
         </Routes>
-        <Footer/>
       </div>  
     </BrowserRouter>
   );

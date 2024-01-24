@@ -8,10 +8,17 @@ import PotrestiConoscere from './PotrestiConoscere/PotrestiConoscere'
 import InLearning from './InLearning/InLearning'
 import Risorse from './Risorse/Risorse'
 import SectionAnalysis from './SectionAnalysis/SectionAnlysis'
+import Experiences from './experiences/Experiences'
+import ActivityComponent from './ActivityComponent/ActivityComponent'
+import EducationComponent from './EducationComponent/EducationComponent'
+import { getUserExperiencesAction } from '../../redux/actions'
+import { useParams } from 'react-router-dom'
+import Footer from '../footer/Footer'
 
 const ProfilePage = () => {
+    const iduser = useParams();
     const loggedUser = useSelector((state) => state.user.userFetch)
-    const apiUrl = 'https://striveschool-api.herokuapp.com/api/profile/me'
+    const apiUrl = `https://striveschool-api.herokuapp.com/api/profile/${iduser.user}`
     const token = {
         method: 'GET',
         headers: {
@@ -23,25 +30,37 @@ const ProfilePage = () => {
 
     useEffect(() => {
         dispatch(getUserFetchAction(apiUrl, token))
-    }, [])
+    },[])
 
-    useEffect(() => {
-        console.log(loggedUser)
+    useEffect(() => { 
+        if (loggedUser && loggedUser._id) {
+            dispatch(getUserExperiencesAction(`https://striveschool-api.herokuapp.com/api/profile/${loggedUser._id}/experiences`)) 
+        }
     },[loggedUser])
 
     return (
+        <>
         <div className='profilePage'>
             <div className='profilePageLeft'>
                 <ProfiloTop />
-                <Risorse/> 
-                <SectionAnalysis/>
+                {iduser.user === '65ae3ed3600be100183a8698' ? (
+                    <>
+                    <Risorse/>
+                    <SectionAnalysis/>
+                    </>
+                ) : ''}
+                <Experiences/>
+                <ActivityComponent/>
+                <EducationComponent/>
             </div>
             <div className='profilePageRight'>
-                <Lingua/>
+                {iduser.user === '65ae3ed3600be100183a8698' ? (<Lingua/>) : ''}        
                 <PotrestiConoscere/>
                 <InLearning/>
             </div>
         </div>
+        <Footer/>
+        </>
     )
 }
 

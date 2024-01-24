@@ -1,11 +1,10 @@
 import './EditProfile.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
-import { editUserInfoAction } from '../../../redux/actions'
 import { getUserFetchAction } from '../../../redux/actions'
 import { useNavigate } from 'react-router'
 
-const EditProfile = ({close}) => {
+const EditProfile = ({close, }) => {
     const loggedUser = useSelector((state) => state.user.userFetch)
     const [editedProfile, setEditedProfile] = useState({
         name: '',
@@ -54,7 +53,6 @@ const EditProfile = ({close}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         handleFetchPUT()
-        editUserInfoAction(editedProfile)
         close()
     }
 
