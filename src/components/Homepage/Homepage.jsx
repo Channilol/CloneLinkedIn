@@ -21,8 +21,8 @@ const Homepage = () => {
 {isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""} 
         <div className='homepage'>      
             <div className='homepageLeft'>
-                <GruppiEventiHastag /> 
                 <WelcomeMessage/>
+                <GruppiEventiHastag />               
                 {/* LEFT */}     
             </div>
             <div className='homepageCenterAndRight'>
@@ -32,9 +32,10 @@ const Homepage = () => {
                     
                 </div>
                 <div className='homepageRight'>
-                    {/* RIGHT */}
-                    <Minifooter open={handleOpenFooter}/> 
                     <Notizie />
+                    <Minifooter open={handleOpenFooter}/> 
+                    
+                    {/* RIGHT */}
                 </div>
 
             </div>
