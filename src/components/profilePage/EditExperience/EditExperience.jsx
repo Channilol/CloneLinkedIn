@@ -1,7 +1,7 @@
 import './EditExperience.css'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUserExperiencesAction } from '../../redux/actions'
+import { getUserExperiencesAction } from '../../../redux/actions'
 
 const EditExperience = ({experience, close}) => {
     const loggedUser = useSelector((state) => state.user.userFetch)

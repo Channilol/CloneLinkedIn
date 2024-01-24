@@ -1,5 +1,5 @@
-.homepage {
-    width: 100vw;
+.jobspage {
+    width: 100%;
     max-width: 576px;
     display: flex;
     flex-direction: column;
@@ -8,59 +8,58 @@
     box-sizing: border-box;
 }
 
-.homepageCenterAndRight {
+.jobspageCenterAndRight {
     width: 100%;
 }
 
-.homepageLeft {
+.jobspageLeft {
     width: 100%;
 }
 
-.homepageCenter {
+.jobspageCenter {
     width: 100%;
 }
 
-.homepageRight {
+.jobspageRight {
     width: 100%;
 }
 
 @media screen and (min-width:768px) {
-    .homepage {
+    .jobspage {
         flex-direction: row;
-        align-items: flex-start;
         min-width: 700px;
     }
-    .homepageLeft {
+    .jobspageLeft {
         min-width: 250px;
         max-width: 250px
     }
-    .homepageCenter {
+    .jobspageCenter {
         min-width: 450px;
     }
 }
 
 @media screen and (min-width:992px) {
-    .homepage {
+    .jobspage {
         min-width: 950px;
     }
-    .homepage .homepageCenterAndRight {
+    .jobspage .jobspageCenterAndRight {
         display: flex;
         width: calc(100% - 250px);
     }
-    .homepageRight {
+    .jobspageRight {
         min-width: 300px;
         max-width: 300px
     }
-    .homepageCenter {
+    .jobspageCenter {
         min-width: 400px;
     }
 }
 
 @media screen and (min-width:1200px) {
-    .homepage {
+    .jobspage {
         max-width: 1150px;
     }
-    .homepageCenter {
+    .jobspageCenter {
         width: 600px;
     }
 }
