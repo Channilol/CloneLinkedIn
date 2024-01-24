@@ -1,4 +1,4 @@
-#containerFooter {
+/* #containerFooter {
     min-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -11,8 +11,8 @@
     border-radius: 10px;
     position: fixed;
     bottom: 0;
+    z-index: 100002;
     animation: footerComparsa 0.5s ease-in-out forwards;
-    
 }
 
 #containerFooter select {
@@ -137,4 +137,4 @@
         flex-direction: row;
         
     }
-}
+} */
