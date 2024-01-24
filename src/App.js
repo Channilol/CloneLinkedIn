@@ -6,12 +6,13 @@ import HomepagePROVA from './components/homepagePROVA/HomepagePROVA';
 import Homepage from './components/Homepage/Homepage';
 import Jobspage from './components/JobsPage/Jobspage';
 import JobsPage2 from './components/JobsPage2/JobsPage2';
+import JobsHeader from './components/JobsPage2/JobsHeader';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <MyHeader/> 
+       <MyHeader/>   
         <Routes>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/jobspage' element={<Jobspage />} />
