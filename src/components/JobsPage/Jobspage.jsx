@@ -3,10 +3,10 @@ import "./Jobspage.css"
 import MyOfferte from "./MyOfferte/MyOfferte";
 import SelezioneInCorso from "./SelezioneInCorso/SelezioneInCorso";
 import RicercheSuggerite from "./RicercheSuggerite/RicercheSuggerite";
+import ReccommendedForYou from "./RecommendedForYou/RecommendedForYou";
 import { useState } from "react";
 import Minifooter from "../Homepage/MiniFooter/MiniFooter";
 import BigFooter from "../Homepage/BigFooter/BigFooter";
-
 
 const Jobspage = () => {
     const [isFooterOn, setIsFooterOn] = useState(false)
@@ -29,6 +29,7 @@ const Jobspage = () => {
             <div className='jobspageCenterAndRight'>
                 <div className='jobspageCenter'>
                 <RicercheSuggerite />
+                <ReccommendedForYou />
                     {/* CENTER */}
                    <SelezioneInCorso />
                 </div>
