@@ -60,7 +60,17 @@ const JobsHeader = () => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setDropdownOpen(false);
             }
+        };
 
+        document.addEventListener('click', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+        };
+    }, [isDropdownOpen]);
+
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
             if (otherDropdownRef.current && !otherDropdownRef.current.contains(event.target)) {
                 setOtherDropdownOpen(false);
             }
@@ -71,7 +81,7 @@ const JobsHeader = () => {
         return () => {
             document.removeEventListener('click', handleOutsideClick);
         };
-    }, [isDropdownOpen, isOtherDropdownOpen]);
+    }, [isOtherDropdownOpen]);
 
     return (
         <header id="jobsHeader">
@@ -118,7 +128,7 @@ const JobsHeader = () => {
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                         </svg>
                         <form  onSubmit={(e) => handleHeaderSubmit(e)}>
-                            <input type="text" className='inputSearchMobileJobs' placeholder="Città, stato o CAP" style={{ marginLeft: "20px" }} />
+                            <input type="text" className='inputSearchMobileJobs' id="locationSearchOnly" placeholder="Città, stato o CAP" style={{ marginLeft: "20px" }} />
                         </form>
                     </div>
                 )}
@@ -208,9 +218,9 @@ const JobsHeader = () => {
                 </div>
 
                 <div id="sectionMenuNavJobs">
-                    <div className="divIconsMenuNav">
+                    <div className="divIconsMenuNav" ref={dropdownRef}>
 
-                        <div className='dropdown-icon' onClick={toggleDropdown} ref={dropdownRef}>
+                        <div className='dropdown-icon' onClick={toggleDropdown} >
                         {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                         </div>
                         {isDropdownOpen && (
@@ -247,8 +257,8 @@ const JobsHeader = () => {
                     </div>
 
 
-                    <div className="divIconsMenuNav" id="borderContainerIconsNav">
-                        <div className="dropdown-icon" onClick={toggleOtherDropdown} ref={otherDropdownRef}>
+                    <div className="divIconsMenuNav" id="borderContainerIconsNav" ref={otherDropdownRef}>
+                        <div className="dropdown-icon" onClick={toggleOtherDropdown} >
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-grid-3x3-gap-fill svgPointer" viewBox="0 0 16 16">
                                 <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
                             </svg>
