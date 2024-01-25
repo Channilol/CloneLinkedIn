@@ -1,7 +1,9 @@
 import MyHeader from "../MyHeader/MyHeader";
 import "./Jobspage.css"
 import MyOfferte from "./MyOfferte/MyOfferte";
+import SelezioneInCorso from "./SelezioneInCorso/SelezioneInCorso";
 import RicercheSuggerite from "./RicercheSuggerite/RicercheSuggerite";
+
 
 const Jobspage = () => {
     return (
@@ -16,6 +18,7 @@ const Jobspage = () => {
                 <div className='jobspageCenter'>
                 <RicercheSuggerite />
                     {/* CENTER */}
+                   <SelezioneInCorso />
                 </div>
                     <div className='jobspageRight'>
                         {/* RIGHT */}
