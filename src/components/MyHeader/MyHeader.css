@@ -266,6 +266,10 @@
     cursor: pointer;
 }
 
+.changeColorSvg{
+    cursor: pointer;
+}
+
 .divIconsNav:hover .changeColorSvg,
 .dropdown-icon:hover .changeColorSvg {
     fill: black;

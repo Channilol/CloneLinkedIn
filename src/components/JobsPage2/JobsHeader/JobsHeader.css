@@ -333,3 +333,7 @@
         left: 52.5%;
     }
 }
+
+.svgPointer{
+    cursor: pointer;
+}

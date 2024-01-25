@@ -1,20 +1,19 @@
+import JobsHeader from "./JobsHeader/JobsHeader"
 import './JobsPage2.css'
 
 const JobsPage2 = () => {
     return (
         <>
-        
-        {/* header che compare a 640px */}
-
-        <div className='jobsPageDue'>
-            <div className='jobsPageDueLeft'>
-                <h1>LEFT</h1>
+            <JobsHeader />
+            <div className='jobsPageDue'>
+                <div className='jobsPageDueLeft'>
+                    <h1>LEFT</h1>
+                </div>
+                <div className='jobsPageDueRight'>
+                    <h1>Right</h1>
+                </div>
             </div>
-            <div className='jobsPageDueRight'>
-                <h1>Right</h1>
-            </div>
-        </div>
-        </> 
+        </>
     )
 }
 
