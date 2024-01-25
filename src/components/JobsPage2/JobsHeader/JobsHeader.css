@@ -129,14 +129,21 @@
     }
 }
 
-#logoNavJobs {
+#logoNavJobs{
     margin-left: 5%;
     margin-right: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+#logoNavJobs:hover{
+    box-shadow: 0px 0px 8px 2px #0a66c275;
 }
 
 #navbarJobs {
     display: flex;
     margin-left: 30px;
+    padding-top: 9px;
 }
 
 .divNavJobs {
@@ -201,6 +208,11 @@
     display: none;
     align-items: center;
     background-color: #edf3f8;
+}
+
+#inputLocationNavJobs:hover,
+.inputSearchNavJobs:hover{
+    outline: 1px solid #0a66c2;
 }
 
 #buttonNav {
@@ -297,7 +309,7 @@
     height: 15px;
     border: none;
     border-radius: 5px;
-    outline: solid 1px #0a66c2;
+    outline: solid 2px #0a66c2;
     align-items: center;
     background-color: #edf3f8;
 }
@@ -336,4 +348,13 @@
 
 .svgPointer{
     cursor: pointer;
+}
+
+.svgPointer:hover{
+    fill:black;
+}
+
+#divIconJobsActive{
+    border-bottom: 2px solid black;
+    filter: drop-shadow(22px, 22px, 22px red)
 }
