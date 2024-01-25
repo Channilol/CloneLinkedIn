@@ -6,6 +6,10 @@ import BigFooter from './BigFooter/BigFooter'
 import { useState } from 'react'
 import WelcomeMessage from './WelcomeMessage/WelcomeMessage'
 import Notizie from './Notizie/Notizie'
+import MyHeader from '../MyHeader/MyHeader'
+import CreateNewPost from './createNewPost/CreateNewPost'
+import PostContainer from './PostContainer/PostContainer'
+
 
 
 const Homepage = () => {
@@ -17,8 +21,9 @@ const Homepage = () => {
         setIsFooterOn(false)
     }
     return (
-<>
-{isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""} 
+        <>
+      <MyHeader />
+       {isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""} 
         <div className='homepage'>      
             <div className='homepageLeft'>
                 <WelcomeMessage/>
@@ -27,7 +32,10 @@ const Homepage = () => {
             </div>
             <div className='homepageCenterAndRight'>
                 <div className='homepageCenter'>
+                    <CreateNewPost/>
                     <ConsigliPerTe />
+                    <PostContainer />
+                    
                     {/* CENTER */}
                     
                 </div>
@@ -37,10 +45,9 @@ const Homepage = () => {
                     
                     {/* RIGHT */}
                 </div>
-
             </div>
         </div>
-        </>
+     </>
     )
 }
 
