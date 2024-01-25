@@ -1,12 +1,12 @@
 #jobsHeader {
+    display: flex;
+    align-items: center;
     background-color: white;
     border: 1px solid #e0dfdb;
-    display: none;
     margin-bottom: 20px;
     width: 100%;
     box-sizing: border-box;
     min-height: 70px;
-    padding-left: 5%;
 }
 
 #jobsHeader>svg:first-of-type {
@@ -14,13 +14,15 @@
     min-height: 37px;
 }
 
-@media screen and (min-width: 640px) {
-    #jobsHeader {
-        display: flex;
-        align-items: center;
-    }
+#navbarJobs {
+    display: none;
+    margin-left: 30px;
+    padding-top: 9px;
+}
 
+@media screen and (min-width: 641px) {
     #navbarJobs {
+        display: flex;
         padding-left: 35px;
     }
 }
@@ -129,22 +131,18 @@
     }
 }
 
-#logoNavJobs{
+#logoNavJobs {
     margin-left: 5%;
     margin-right: 20px;
     cursor: pointer;
     transition: box-shadow 0.3s ease;
 }
 
-#logoNavJobs:hover{
+#logoNavJobs:hover {
     box-shadow: 0px 0px 8px 2px #0a66c275;
 }
 
-#navbarJobs {
-    display: flex;
-    margin-left: 30px;
-    padding-top: 9px;
-}
+
 
 .divNavJobs {
     flex-direction: column;
@@ -211,7 +209,7 @@
 }
 
 #inputLocationNavJobs:hover,
-.inputSearchNavJobs:hover{
+.inputSearchNavJobs:hover {
     outline: 1px solid #0a66c2;
 }
 
@@ -305,7 +303,7 @@
 .inputSearchMobileJobs {
     padding: 10px;
     padding-left: 35px;
-    width: 190px;
+    width: 160px;
     height: 15px;
     border: none;
     border-radius: 5px;
@@ -313,6 +311,78 @@
     align-items: center;
     background-color: #edf3f8;
 }
+
+@media screen and (max-width: 521px) {
+    #locationSearchOnly {
+        display: none;
+    }
+
+    #iconLocationMobileJobs {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width:380px) and (max-width: 410px) {
+    .inputSearchMobileJobs {
+        width: 180px;
+    }
+}
+
+@media screen and (min-width:410px) and (max-width: 450px) {
+    .inputSearchMobileJobs {
+        width: 220px;
+    }
+}
+
+@media screen and (min-width:450px) and (max-width: 490px) {
+    .inputSearchMobileJobs {
+        width: 255px;
+    }
+}
+
+@media screen and (min-width:490px) and (max-width: 520px) {
+    .inputSearchMobileJobs {
+        width: 285px;
+    }
+}
+
+@media screen and (min-width:521px) and (max-width: 550px) {
+    .inputSearchMobileJobs {
+        width: 130px;
+    }
+}
+
+@media screen and (min-width:550px) and (max-width: 580px) {
+    .inputSearchMobileJobs {
+        width: 140px;
+    }
+}
+
+@media screen and (min-width:580px) and (max-width: 620px) {
+    .inputSearchMobileJobs {
+        width: 155px;
+    }
+}
+
+@media screen and (min-width:620px) and (max-width: 640px) {
+    .inputSearchMobileJobs {
+        width: 175px;
+    }
+}
+
+@media screen and (min-width:641px) and (max-width: 760px) {
+    .inputSearchMobileJobs {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width:760px) and (max-width: 812px) {
+    .inputSearchMobileJobs {
+        width: 220px;
+    }
+}
+
 
 @media screen and (min-width:812px) and (max-width: 853px) {
     .inputSearchMobileJobs {
@@ -346,19 +416,32 @@
     }
 }
 
-.svgPointer{
+.svgPointer {
     cursor: pointer;
 }
 
-.svgPointer:hover{
-    fill:black;
+.svgPointer:hover {
+    fill: black;
 }
 
-#divIconJobsActive{
+#divIconJobsActive {
     border-bottom: 2px solid black;
     filter: drop-shadow(22px, 22px, 22px red)
 }
 
+
+#boxIconMobileJobs {
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    #boxIconMobileJobs {
+        display: flex;
+        position: absolute;
+        right: 0;
+    }
+
 #jobsHeader .dropdown-icon img {
     margin-top: 0px;
+
 }

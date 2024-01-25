@@ -140,6 +140,10 @@
     background-color: #edf3f8;
 }
 
+#inputSearchMobile:hover{
+    outline: 2px solid #0a66c2;
+}
+
 @media screen and (min-width: 371px) and (max-width: 390px){
     #inputSearchMobile{
         width: 235px;
