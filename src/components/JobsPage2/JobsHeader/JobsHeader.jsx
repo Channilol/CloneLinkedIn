@@ -5,6 +5,7 @@ import "./JobsHeader.css"
 const JobsHeader = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isOtherDropdownOpen, setOtherDropdownOpen] = useState(false);
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isSearchVisible, setIsSearchVisible] = useState(false);
 
     const searchRef = useRef(null)
@@ -17,6 +18,10 @@ const JobsHeader = () => {
     const toggleOtherDropdown = () => {
         setOtherDropdownOpen(!isOtherDropdownOpen);
     };
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!isMobileMenuOpen)
+    }
 
     const handleSearchIconClick = () => {
         setIsSearchVisible(!isSearchVisible);
@@ -89,15 +94,68 @@ const JobsHeader = () => {
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                         </svg>
                         <input type="text" className="inputSearchMobileJobs" placeholder="Cerca offerte di lavoro /..." />
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16"
-                            id="iconLocationMobileJobs">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16" id="iconLocationMobileJobs">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                         </svg>
-                        <input type="text" className='inputSearchMobileJobs' placeholder="Città, stato o CAP" style={{ marginLeft: "20px" }} />
+                        <input type="text" className='inputSearchMobileJobs' id="locationSearchOnly" placeholder="Città, stato o CAP" style={{ marginLeft: "20px" }} />
                     </div>
                 )}
             </div>
             <button id="buttonNav">Cerca</button>
+
+            <div id="boxIconMobileJobs" onClick={toggleMobileMenu}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-list" id="svgMobileMenu" viewBox="0 0 16 16" style={{ marginRight: "20px" }}>
+                    <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </div>
+
+            <nav id="navbarCustomMobile" className={isMobileMenuOpen ? "mobile-menu-open" : ""}>
+                <div className="mobile-menu-item" onClick={() => navigate('/')}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-house-door-fill changeColorSvg" viewBox="0 0 16 16">
+                        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                    </svg>
+                    <p className="textIconsNav">Home</p>
+                </div>
+                <div className="mobile-menu-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-people-fill changeColorSvg" viewBox="0 0 16 16">
+                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                    </svg>
+                    <p className="textIconsNav">Rete</p>
+                </div>
+                <div className="mobile-menu-item" onClick={() => navigate('/jobspage')}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-briefcase-fill changeColorSvg" viewBox="0 0 16 16">
+                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5" />
+                        <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z" />
+                    </svg>
+                    <p className="textIconsNav">Lavoro</p>
+                </div>
+                <div className="mobile-menu-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-chat-dots-fill changeColorSvg" viewBox="0 0 16 16">
+                        <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                    </svg>
+                    <p className="textIconsNav">Messaggistica</p>
+                </div>
+                <div className="mobile-menu-item" onClick={() => navigate('/profile/me')}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-bell-fill changeColorSvg" viewBox="0 0 16 16">
+                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                    </svg>
+                    <p className="textIconsNav">Notifiche</p>
+                </div>
+                <div className="mobile-menu-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-person-circle changeColorSvg" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                    <p className="textIconsNav">Profilo</p>
+                </div>
+                <div className="mobile-menu-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-grid-3x3-gap-fill changeColorSvg" viewBox="0 0 16 16">
+                        <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
+                    </svg>
+                    <p className="textIconsNav">Aziende</p>
+                </div>
+
+            </nav>
 
 
             <nav id="navbarJobs">
