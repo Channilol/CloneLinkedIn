@@ -1,20 +1,22 @@
 import MyHeader from "../MyHeader/MyHeader";
 import "./Jobspage.css"
 import MyOfferte from "./MyOfferte/MyOfferte";
+import RicercheSuggerite from "./RicercheSuggerite/RicercheSuggerite";
 
 const Jobspage = () => {
     return (
         <>
-        <MyHeader />
-            <div className='jobspage'>
-                <div className='jobspageLeft'>
-                    {/* LEFT */}
-                    <MyOfferte />
+      <MyHeader />
+        <div className='jobspage'>
+            <div className='jobspageLeft'>
+                {/* LEFT */}
+                <MyOfferte />
+            </div>
+            <div className='jobspageCenterAndRight'>
+                <div className='jobspageCenter'>
+                <RicercheSuggerite />
+                    {/* CENTER */}
                 </div>
-                <div className='jobspageCenterAndRight'>
-                    <div className='jobspageCenter'>
-                        {/* CENTER */}
-                    </div>
                     <div className='jobspageRight'>
                         {/* RIGHT */}
                     </div>

@@ -7,6 +7,9 @@ import { useState } from 'react'
 import WelcomeMessage from './WelcomeMessage/WelcomeMessage'
 import Notizie from './Notizie/Notizie'
 import MyHeader from '../MyHeader/MyHeader'
+import CreateNewPost from './createNewPost/CreateNewPost'
+import PostContainer from './PostContainer/PostContainer'
+
 
 
 const Homepage = () => {
@@ -19,30 +22,31 @@ const Homepage = () => {
     }
     return (
         <>
-            <MyHeader />
-            {isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""}
-            <div className='homepage'>
-                <div className='homepageLeft'>
-                    <WelcomeMessage />
-                    <GruppiEventiHastag />
-                    {/* LEFT */}
+      <MyHeader />
+       {isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""} 
+        <div className='homepage'>      
+            <div className='homepageLeft'>
+                <WelcomeMessage/>
+                <GruppiEventiHastag />               
+                {/* LEFT */}     
+            </div>
+            <div className='homepageCenterAndRight'>
+                <div className='homepageCenter'>
+                    <CreateNewPost/>
+                    <ConsigliPerTe />
+                    <PostContainer />
+                    {/* CENTER */}
+                    
                 </div>
-                <div className='homepageCenterAndRight'>
-                    <div className='homepageCenter'>
-                        <ConsigliPerTe />
-                        {/* CENTER */}
-
-                    </div>
-                    <div className='homepageRight'>
-                        <Notizie />
-                        <Minifooter open={handleOpenFooter} />
-
-                        {/* RIGHT */}
-                    </div>
-
+                <div className='homepageRight'>
+                    <Notizie />
+                    <Minifooter open={handleOpenFooter}/> 
+                    
+                    {/* RIGHT */}
                 </div>
             </div>
-        </>
+        </div>
+     </>
     )
 }
 

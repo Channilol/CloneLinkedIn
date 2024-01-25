@@ -6,6 +6,26 @@
     padding: 25px;
 }
 
-.experiences h2 {
+.experiences > div:first-of-type {
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
+}
+
+.experiences h2 {
+    margin-right: 15px;
+}
+
+.newExperienceButton {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.newExperienceButton:hover {
+    transform: scale(1.1);
 }

@@ -47,19 +47,25 @@ const ProfiloTop = () => {
         e.preventDefault()
         if (profilePic) {
             const formData = new FormData()
-            formData.append('editProfilePic', profilePic, profilePic.name)
+            formData.append('profile', profilePic)
             try {
                 const res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${loggedUser._id}/picture`, {
                     method: 'POST',
                     headers: {
                       'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2VkMzYwMGJlMTAwMTgzYTg2OTgiLCJpYXQiOjE3MDU5MTgxNjMsImV4cCI6MTcwNzEyNzc2M30.7DYncSKPLwIy7aJwIhh6w0OhrQZ4E4_M74Hg7oUY_DE',
-                      'Content-Type': 'multipart/form-data'
                     },
                     body: formData,
                   })
                   if (res.ok) {
                     alert('Immagine caricata con successo!')
-                    dispatch(getUserFetchAction(`https://striveschool-api.herokuapp.com/api/profile/me`))
+                    dispatch(getUserFetchAction('https://striveschool-api.herokuapp.com/api/profile/me', {
+                    method: 'GET',
+                    headers: {
+                      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2VkMzYwMGJlMTAwMTgzYTg2OTgiLCJpYXQiOjE3MDU5MTgxNjMsImV4cCI6MTcwNzEyNzc2M30.7DYncSKPLwIy7aJwIhh6w0OhrQZ4E4_M74Hg7oUY_DE',
+                      'Content-Type': 'application/json'
+                    },
+                    }))
+                    setProfilePic(null)
                   } else {
                     console.log('Errore nel caricamento dati')
                   }
@@ -92,6 +98,7 @@ const ProfiloTop = () => {
                 <img src="https://static.vecteezy.com/system/resources/previews/026/307/268/non_2x/cool-plain-blue-abstract-background-hd-wallpaper-design-free-vector.jpg" alt="bgimg" />
             </div>
             {iduser.user === '65ae3ed3600be100183a8698' ? (
+                <>
                 <div className='editPhoto'>
                     <label htmlFor="editProfilePic">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0a66c2" className="bi bi-camera-fill" viewBox="0 0 16 16">
@@ -100,10 +107,21 @@ const ProfiloTop = () => {
                         </svg>
                     </label>
                     <input className='inputFile' type='file' id='editProfilePic' name='editProfilePic' accept='image/png, image/jpg' onChange={(e) => handleProfilePicChange(e)} />
-                </div>         
+                </div> 
+                {profilePic ? (
+                    <>
+                    <div className='uploadPhotoDiv'>
+                    <button onClick={(e) => handleProfilePicUpload(e)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill={profilePic !== null ? 'green' : 'gray'} className="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
+                            <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </button>
+                </div>
+                    </>
+                ) : ''}                
+                </>
             ) : ''}
-            <div className='profilePic'>
-                
+            <div className='profilePic'>               
                 {userToShow ? (
                     iduser.user === '65ae3ed3600be100183a8698' ? (
                         <img src={loggedUser.image} alt={loggedUser.name}/>
@@ -128,9 +146,34 @@ const ProfiloTop = () => {
                     <p>EPICODE</p>
                 </div>
                 <div className='profileMainText'>
-                    <h2>{userToShow.username}</h2>
-                    <p>{userToShow.title} presso {userToShow.area}</p>
-                    <p>{userToShow.area} • <Link to='/'>Informazioni di contatto</Link></p>
+                    <h2>{iduser.user === '65ae3ed3600be100183a8698' ? (
+                        loggedUser.username
+                    ) : (
+                        userToShow.username
+                    )}
+                        </h2>
+                    <p>
+                    {iduser.user === '65ae3ed3600be100183a8698' ? (
+                        <>
+                        {loggedUser.title} presso {loggedUser.area}
+                        </>
+                        ) : (
+                            <>
+                            {userToShow.title} presso {userToShow.area}  
+                            </>
+                        )}
+                    </p>
+                    <p>
+                    {iduser.user === '65ae3ed3600be100183a8698' ? (
+                        <>
+                        {loggedUser.area} • <Link to='/'>Informazioni di contatto</Link>
+                        </>
+                        ) : (
+                        <>
+                        {userToShow.area} • <Link to='/'>Informazioni di contatto</Link>
+                        </>
+                        )} 
+                        </p>
                 </div>
                 {iduser.user === '65ae3ed3600be100183a8698' ? (
                     <div className='profileButtons'>
