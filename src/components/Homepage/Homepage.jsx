@@ -10,7 +10,6 @@ import Notizie from './Notizie/Notizie'
 import MyHeader from '../MyHeader/MyHeader'
 import CreateNewPost from './createNewPost/CreateNewPost'
 import PostContainer from './PostContainer/PostContainer'
-import CommentiCard from './CommentiCard/CommentiCard'
 import { getUserFetchAction } from '../../redux/actions'
 import { getPostFetchAction } from '../../redux/actions'
 
@@ -28,11 +27,12 @@ const Homepage = () => {
       }
     const dispatch = useDispatch()
 
-    const handleOpenFooter = () => {
-        setIsFooterOn(true)
-    }
-    const handleCloseFooter = () => {
-        setIsFooterOn(false)
+    const handleBigFooter = () => {
+        if(isFooterOn) {
+            setIsFooterOn(false)
+        } else {
+            setIsFooterOn(true)
+        }     
     }
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const Homepage = () => {
     return (
         <>
       <MyHeader />
-       {isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""} 
+       {isFooterOn ? (<BigFooter close={handleBigFooter} />) : ""} 
         <div className='homepage'>      
             <div className='homepageLeft'>
                 <WelcomeMessage/>
@@ -56,13 +56,12 @@ const Homepage = () => {
                     <CreateNewPost/>
                     <ConsigliPerTe />
                     <PostContainer />
-                    <CommentiCard />
                     {/* CENTER */}
                     
                 </div>
                 <div className='homepageRight'>
                     <Notizie />
-                    <Minifooter open={handleOpenFooter}/> 
+                    <Minifooter open={handleBigFooter}/> 
                     
                     {/* RIGHT */}
                 </div>

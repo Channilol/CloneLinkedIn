@@ -1,14 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import "./JobsHeader.css"
 
 const JobsHeader = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isOtherDropdownOpen, setOtherDropdownOpen] = useState(false);
     const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const [jobSearchQuery, setJobSearchQuery] = useState('')
 
+    const loggedUser = useSelector((state) => state.user.userFetch)
     const searchRef = useRef(null)
     const navigate = useNavigate()
+
+    const handleHeaderSubmit = (e) => {
+        e.preventDefault()
+        if(jobSearchQuery) {
+            navigate(`/jobspage2/${jobSearchQuery}`)
+        }
+    } 
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -75,25 +85,37 @@ const JobsHeader = () => {
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg>
                 </div>
-                <input type="text" className='inputSearchNavJobs' placeholder="Cerca offerte di lavoro /..." onClick={handleSearchIconClick} />
+                <form onSubmit={(e) => handleHeaderSubmit(e)}>
+                    <input type="text" className='inputSearchNavJobs' placeholder="Cerca offerte di lavoro /..." onClick={handleSearchIconClick}  onChange={(e) => setJobSearchQuery(e.target.value)}/>
+                </form>
+                
                 <div id="iconLocationNavJobs">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16">
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                     </svg>
                 </div>
-                <input type="text" id='inputLocationNavJobs' placeholder="Città, stato o CAP" onClick={handleSearchIconClick} />
+                <form onSubmit={(e) => handleHeaderSubmit(e)}>
+                   <input type="text" id='inputLocationNavJobs' placeholder="Città, stato o CAP" onClick={handleSearchIconClick} /> 
+                </form>
+                
 
                 {isSearchVisible && (
                     <div id="boxSearchMobileJobs">
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-search svgPointer" viewBox="0 0 16 16" id="iconSearchMobileJobs">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                         </svg>
-                        <input type="text" className="inputSearchMobileJobs" placeholder="Cerca offerte di lavoro /..." />
+                        <form onSubmit={(e) => handleHeaderSubmit(e)}>
+                          <input type="text" className="inputSearchMobileJobs" placeholder="Cerca offerte di lavoro /..."  onChange={(e) => setJobSearchQuery(e.target.value)}/>  
+                        </form>
+                        
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16"
                             id="iconLocationMobileJobs">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                         </svg>
-                        <input type="text" className='inputSearchMobileJobs' placeholder="Città, stato o CAP" style={{ marginLeft: "20px" }} />
+                        <form  onSubmit={(e) => handleHeaderSubmit(e)}>
+                            <input type="text" className='inputSearchMobileJobs' placeholder="Città, stato o CAP" style={{ marginLeft: "20px" }} />
+                        </form>
+                        
                     </div>
                 )}
             </div>
@@ -131,23 +153,17 @@ const JobsHeader = () => {
                     <div className="divIconsMenuNav">
 
                         <div className='dropdown-icon' onClick={toggleDropdown} ref={dropdownRef}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-person-circle svgPointer" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                            </svg>
+                        {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                         </div>
                         {isDropdownOpen && (
                             <div className="customNavDropdown dropdown-content">
 
                                 <div>
                                     <div className='firstSectionDropdown'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-person-circle svgPointer" viewBox="0 0 16 16">
-                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                            <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                                        </svg>
+                                    {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                                         <div className='textFirstSection'>
-                                            <p className="NomeSectionDropdown">Nome Utente</p>
-                                            <p>Titolo</p>
+                                            <p className="NomeSectionDropdown">{loggedUser ? loggedUser.username : 'Loading...'}</p>
+                                            <p>{loggedUser.title}</p>
                                         </div>
                                     </div>
                                     <button className="buttonDropdown" onClick={() => navigate('/profile/me')}>Visualizza profilo</button>

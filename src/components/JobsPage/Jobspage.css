@@ -14,14 +14,53 @@
 
 .jobspageLeft {
     width: 100%;
+    animation: homepageLeft 0.3s ease-in-out;
+}
+
+@keyframes homepageLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  
 }
 
 .jobspageCenter {
     width: 100%;
+    animation: homepageCenter 0.3s ease-in-out;
+}
+
+@keyframes homepageCenter {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+  
 }
 
 .jobspageRight {
     width: 100%;
+    animation: homepageRight 0.3s ease-in-out;
+}
+
+@keyframes homepageRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  
 }
 
 @media screen and (min-width:768px) {

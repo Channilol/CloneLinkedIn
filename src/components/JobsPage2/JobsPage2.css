@@ -5,12 +5,40 @@
 }
 
 .jobsPageDueLeft {
-    display: none;
     min-width: 250px;
+    animation: homepageLeft 0.5s ease-in-out;
+}
+
+@keyframes homepageLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  
 }
 
 .jobsPageDueRight {
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: homepageRight 0.5s ease-in-out;
+}
+
+@keyframes homepageRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  
 }
 
 @media screen and (min-width:640px) {
@@ -20,10 +48,12 @@
 
     .jobsPageDueLeft {
         display: block;
+        max-width: 450px;
     }
 
     .jobsPageDueRight {
         width: calc(100% - 250px);
+        position: inherit;
     }
 }
 

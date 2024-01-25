@@ -1,7 +1,9 @@
 import "./DettagliLavoro.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const DettagliLavoro = ({jobData}) => {
+const DettagliLavoro = ({jobData, close}) => {
+  
+
   const dateString = jobData.publication_date;
   const dateObject = new Date(dateString);
   const day = dateObject.getDate();
@@ -12,7 +14,12 @@ const DettagliLavoro = ({jobData}) => {
   return (
     <div id="contenitorePrincipale">
       <div>
-        <h2>{jobData.title}</h2>
+        <div className="dettagliLavoroTop">
+          <h2>{jobData.title}</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,0.8)" class="bi bi-x-lg" viewBox="0 0 16 16" onClick={close}>
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+            </svg>
+        </div>
         <p>{jobData.company_name} - {publicationDate}</p>
       </div>
       <div id="tipi">

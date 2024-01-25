@@ -358,3 +358,7 @@
     border-bottom: 2px solid black;
     filter: drop-shadow(22px, 22px, 22px red)
 }
+
+#jobsHeader .dropdown-icon img {
+    margin-top: 0px;
+}

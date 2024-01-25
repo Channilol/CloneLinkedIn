@@ -8,6 +8,8 @@ import { useState, useEffect } from "react"
 const JobsPage2 = () => {
     const [jobsData, setJobsData] = useState([])
     const [jobSelected, setJobSelected] = useState('')
+    const [isJobDetailsOn, setIsJobDetailsOn] = useState(false)
+    
     const iduser = useParams();
     const token = {
         method: 'GET',
@@ -42,10 +44,15 @@ const JobsPage2 = () => {
 
     useEffect(() => {
         handleJobsFetch()
-    },[])
+    },[iduser])
 
     const handleJobSelected = (job) => {
         setJobSelected(job)
+        setIsJobDetailsOn(true)
+    }
+
+    const closeJobSelected = () => {
+        setIsJobDetailsOn(false)
     }
     
     return (
@@ -60,7 +67,7 @@ const JobsPage2 = () => {
                     ) : ''}
                 </div>
                 <div className='jobsPageDueRight'>
-                    {jobSelected ? <DettagliLavoro jobData={jobSelected}/> : ''}
+                    {jobSelected && isJobDetailsOn ? <DettagliLavoro close={closeJobSelected} jobData={jobSelected}/> : ''}
                 </div>
             </div>
         </>
