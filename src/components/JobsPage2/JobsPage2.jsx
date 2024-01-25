@@ -44,18 +44,6 @@ const JobsPage2 = () => {
         handleJobsFetch()
     },[])
 
-    useEffect(() => {
-        console.log(iduser.searchquery)
-    },[iduser])
-
-    useEffect(() => {
-        console.log(jobsData.data)
-    },[jobsData])
-
-    useEffect(() => {
-        console.log(jobSelected)
-    },[jobSelected])
-
     const handleJobSelected = (job) => {
         setJobSelected(job)
     }
@@ -72,7 +60,6 @@ const JobsPage2 = () => {
                     ) : ''}
                 </div>
                 <div className='jobsPageDueRight'>
-                    <DettagliLavoro jobData={jobSelected} />
                     {jobSelected ? <DettagliLavoro jobData={jobSelected}/> : ''}
                 </div>
             </div>
