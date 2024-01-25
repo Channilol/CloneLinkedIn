@@ -7,6 +7,7 @@ import { useState } from 'react'
 import WelcomeMessage from './WelcomeMessage/WelcomeMessage'
 import Notizie from './Notizie/Notizie'
 import CreateNewPost from './createNewPost/CreateNewPost'
+import PostContainer from './PostContainer/PostContainer'
 
 
 const Homepage = () => {
@@ -30,6 +31,7 @@ const Homepage = () => {
                 <div className='homepageCenter'>
                     <CreateNewPost/>
                     <ConsigliPerTe />
+                    <PostContainer />
                     {/* CENTER */}
                     
                 </div>

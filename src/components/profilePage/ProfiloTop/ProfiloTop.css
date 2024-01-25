@@ -87,6 +87,10 @@
     transition: transform 0.2s ease-in-out
 }
 
+.profiloTop .uploadPhotoDiv button:hover .profiloTop .uploadPhotoDiv {
+    top: 70px;
+}
+
 .profiloTop .uploadPhotoDiv button:hover {
     transform: scale(1.1);
 }

@@ -1,7 +1,7 @@
 import './ProfilePage.css'
 import ProfiloTop from './ProfiloTop/ProfiloTop'
 import { getUserFetchAction } from '../../redux/actions'
-import { UseSelector, useDispatch, useSelector } from 'react-redux'
+import { useSelector, useDispatch} from 'react-redux'
 import { useEffect } from 'react'
 import Lingua from './lingua/Lingua'
 import PotrestiConoscere from './PotrestiConoscere/PotrestiConoscere'
