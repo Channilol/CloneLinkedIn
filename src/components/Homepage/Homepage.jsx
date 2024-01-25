@@ -9,7 +9,7 @@ import Notizie from './Notizie/Notizie'
 import MyHeader from '../MyHeader/MyHeader'
 import CreateNewPost from './createNewPost/CreateNewPost'
 import PostContainer from './PostContainer/PostContainer'
-
+import CommentiCard from './CommentiCard/CommentiCard'
 
 
 const Homepage = () => {
@@ -35,7 +35,7 @@ const Homepage = () => {
                     <CreateNewPost/>
                     <ConsigliPerTe />
                     <PostContainer />
-                    
+                    <CommentiCard />
                     {/* CENTER */}
                     
                 </div>
