@@ -10,7 +10,6 @@ import EditExperience from '../EditExperience/EditExperience'
 const Experiences = () => {
     const [experienceToShow, setExperienceToShow] = useState([])
     const [isNewExperienceOn, setIsNewExperienceOn] = useState(false)
-    const [isEditExperienceOn, setIsEditExperienceOn] = useState(false)
     const experiences = useSelector(state => state.experiences.experiences)
     const loggedUser = useSelector((state) => state.user.userFetch)
     const dispatch = useDispatch()
@@ -19,22 +18,13 @@ const Experiences = () => {
         iduser.user = '65ae3ed3600be100183a8698'
     }
     const urlExperienceToShow = `https://striveschool-api.herokuapp.com/api/profile/${iduser.user}/experiences`
-    
 
     const handleOpenNewExperience = () => {
-        setIsNewExperienceOn(true)
-    }
-
-    const handleCloseNewExperience = () => {
-        setIsNewExperienceOn(false) 
-    }
-
-    const handleOpenEditExperience = () => {
-        setIsEditExperienceOn(true)
-    }
-
-    const handleCloseEditExperience = () => {
-        setIsEditExperienceOn(false)
+        if (isNewExperienceOn) {
+            setIsNewExperienceOn(false)
+        } else {
+            setIsNewExperienceOn(true)
+        }
     }
 
     const handleExperienceFetch = async (url) => {
@@ -106,9 +96,8 @@ const Experiences = () => {
                 experienceToShow && experienceToShow.length > 0 ? (
                     experienceToShow.map((experience) => {
                         return (
-                            <div  key={experience._id}>
-                                <ExperienceCard experienceData={experience} deleteFunc={() => deleteUserExperience(experience._id)} openEdit={handleOpenEditExperience} />
-                                {isEditExperienceOn ? (<EditExperience experience={experience} close={handleCloseEditExperience} />) : ''}
+                            <div key={experience._id}>
+                                <ExperienceCard experienceData={experience}/>
                             </div>
                         )
                     })
@@ -118,14 +107,13 @@ const Experiences = () => {
                     experiences.map((experience) => {
                         return (
                             <div  key={experience._id}>
-                                <ExperienceCard experienceData={experience} deleteFunc={() => deleteUserExperience(experience._id)} openEdit={handleOpenEditExperience} />
-                                {isEditExperienceOn ? (<EditExperience experience={experience} close={handleCloseEditExperience} />) : ''}
+                                <ExperienceCard experienceData={experience}/>
                             </div>
                         )
                     })
                 ) : (<p>Ancora vuoto</p>)    
             )}
-            {isNewExperienceOn ? (<NewExperience close={handleCloseNewExperience}/>) : ''}
+            {isNewExperienceOn ? (<NewExperience close={handleOpenNewExperience}/>) : ''}
         </div>
     )
 }

@@ -40,8 +40,8 @@
 .profiloTop .editPhoto {
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 220px;
+    left: 110px;
     background-color: white;
     width: 45px;
     height: 45px;
@@ -50,6 +50,7 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease-in-out;
+    z-index: 1000;
 }
 
 .profiloTop .editPhoto label {
@@ -70,8 +71,9 @@
 
 .profiloTop .uploadPhotoDiv {
     position: absolute;
-    top: 80px;
-    right: 37px;
+    top: 190px;
+    left: 140px;
+    z-index: 100000;
 }
 
 .profiloTop .uploadPhotoDiv button {

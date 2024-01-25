@@ -13,36 +13,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10000;
-    animation: editExperienceAnimation 0.3s ease-in-out forwards;
-}
-
-@keyframes editExperienceAnimation {
-    from {
-        opacity: 0;
-        top: 55%
-    }
-    to {
-        opacity: 1;
-        top: 50%
-    }
-}
-
-.editExperience {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 740px;
-    height: 90%;
-    padding: 25px;
-    background-color: white;
-    border: 1px solid #e0dfdb;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10000;
-    animation: newExperienceAnimation 0.3s ease-in-out forwards;
+    animation: newExperienceAnimation 0.3s ease-in-out;
 }
 
 @keyframes newExperienceAnimation {
@@ -54,6 +25,36 @@
         opacity: 1;
         top: 50%
     }
+}
+
+.editExperience > div {
+    position: relative;
+}
+
+.editExperience > form > .newExperienceUploadImg {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    z-index: 10;
+}
+
+.inputPostPic {
+    display: none;
+}
+
+.newExperienceUploadImg label {
+    width: 60px;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.newExperienceUploadImg label:hover {
+    transform: scale(1.3);
 }
 
 .editExperience form {
@@ -116,7 +117,7 @@
     color: white;
     font-weight: 600;
     font-size: 1em;
-    align-self: center;
+    align-self: flex-end;
     transition: transform 0.1s ease-in-out
 }
 
