@@ -1,11 +1,13 @@
+import JobCard from "../JobsPage2/JobCard/JobCard";
 import "./Jobspage.css"
 import MyOfferte from "./MyOfferte/MyOfferte";
+
 
 const Jobspage = () => {
     return (
         <div className='jobspage'>
             <div className='jobspageLeft'>
-                {/* LEFT */}
+                
                 <MyOfferte />
             </div>
             <div className='jobspageCenterAndRight'>
