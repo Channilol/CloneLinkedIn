@@ -1,12 +1,13 @@
 .SelezioneInCorso{
     background-color: #ffffff;
-    border: 1px ridge gray;
-    box-shadow: 0 0 10px rgba(0, 0, 0.4, 0.3);
-    border-radius: 8px;
+    border: 1px solid #e0dfdb;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 20px 0;
 }
 .SelezioneH{
-    margin: 5%;
-    
+    margin: 0 0 10px 0;
     color:#0a66c2 ;
 }
 
@@ -19,14 +20,19 @@
     border-radius: 26px; 
     cursor: pointer; 
    position: absolute;
-   bottom: 38%;
-   right: 10%;
 }
  .SelezioneP{
-    margin-left: 5%;
-    margin-top: 2%;
-    margin-bottom: 5%;
     color: gray;
+ }
+
+ .SelezioneInCorso .cardConsigli {
+   padding: 10px 0;
+   margin: 5px 0;
+ }
+
+ .SelezioneInCorso .cardConsigli div {
+   padding: 0;
+   margin-left: 10px;
  }
 
  .TitoliLavoriSelez{
@@ -42,9 +48,8 @@
  }
 
  .PSelezLav3{
-    padding: 3%;
+    padding: 5px;
     color: rgba(128, 128, 128, 0.603);
-    text-shadow:2px 2px 2px #cecdcc ;
  }
  .PSelezLav4 .bi.bi-linkedin{
     vertical-align: middle;

@@ -27,20 +27,22 @@
 @media screen and (min-width:768px) {
     .jobspage {
         flex-direction: row;
-        min-width: 700px;
+        min-width: 740px;
     }
     .jobspageLeft {
         min-width: 250px;
-        max-width: 250px
+        max-width: 250px;
+        margin-right: 20px;
     }
     .jobspageCenter {
         min-width: 450px;
+        margin-right: 20px;
     }
 }
 
 @media screen and (min-width:992px) {
     .jobspage {
-        min-width: 950px;
+        min-width: 990px;
     }
     .jobspage .jobspageCenterAndRight {
         display: flex;
@@ -57,7 +59,7 @@
 
 @media screen and (min-width:1200px) {
     .jobspage {
-        max-width: 1150px;
+        max-width: 1190px;
     }
     .jobspageCenter {
         width: 600px;

@@ -1,7 +1,6 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProfilePage from './components/profilePage/ProfilePage';
-import MyHeader from './components/MyHeader/MyHeader';
 import Homepage from './components/Homepage/Homepage';
 import Jobspage from './components/JobsPage/Jobspage';
 import JobsPage2 from './components/JobsPage2/JobsPage2';
@@ -10,20 +9,19 @@ import { getUserFetchAction } from './redux/actions';
 import { useEffect } from 'react';
 
 function App() {
-
   const apiUrl = `https://striveschool-api.herokuapp.com/api/profile/me`
-    const token = {
-        method: 'GET',
-        headers: {
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2VkMzYwMGJlMTAwMTgzYTg2OTgiLCJpYXQiOjE3MDU5MTgxNjMsImV4cCI6MTcwNzEyNzc2M30.7DYncSKPLwIy7aJwIhh6w0OhrQZ4E4_M74Hg7oUY_DE',
-          'Content-Type': 'application/json'
-        },
-      }
-    const dispatch = useDispatch()
+  const token = {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2VkMzYwMGJlMTAwMTgzYTg2OTgiLCJpYXQiOjE3MDU5MTgxNjMsImV4cCI6MTcwNzEyNzc2M30.7DYncSKPLwIy7aJwIhh6w0OhrQZ4E4_M74Hg7oUY_DE',
+      'Content-Type': 'application/json'
+    },
+  }
+  const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(getUserFetchAction(apiUrl, token))
-    },[])
+  useEffect(() => {
+      dispatch(getUserFetchAction(apiUrl, token))
+  },[])
 
   return (
     <BrowserRouter>
