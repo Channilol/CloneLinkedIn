@@ -121,8 +121,7 @@ const ProfiloTop = () => {
                 ) : ''}                
                 </>
             ) : ''}
-            <div className='profilePic'>
-                
+            <div className='profilePic'>               
                 {userToShow ? (
                     iduser.user === '65ae3ed3600be100183a8698' ? (
                         <img src={loggedUser.image} alt={loggedUser.name}/>

@@ -104,7 +104,7 @@ const MyOfferte = () => {
           />
         </svg>
         <p>
-          <strong>Pubblica offerta <br />gratuita</strong>
+          <strong>Pubblica offerta gratuita</strong>
         </p>
       </div>
     </div>

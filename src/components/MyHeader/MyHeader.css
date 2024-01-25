@@ -9,6 +9,38 @@
     min-height: 70px;
 }
 
+@media screen and (min-width: 912px) and (max-width: 1280px) {
+    .custom-navbar{
+        padding-left: 5%;
+    }    
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+    .custom-navbar{
+        padding-left: 8%;
+    }    
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1500px){
+    .custom-navbar{
+        padding-left: 12%;
+    }    
+}
+
+
+@media screen and (min-width: 1500px) and (max-width: 1600px){
+    .custom-navbar{
+        padding-left: 14%;
+    }    
+}
+
+
+@media screen and (min-width: 1600px){
+    .custom-navbar{
+        padding-left: 18%;
+    }    
+}
+
 .custom-navbar>svg:first-of-type {
     min-width: 37px;
     min-height: 37px;
@@ -17,6 +49,11 @@
 #logoNavSvg {
     margin-left: 5%;
     margin-right: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+#logoNavSvg:hover{
+    box-shadow: 0px 0px 8px 2px #0a66c275;
 }
 
 
@@ -38,6 +75,10 @@
     align-items: center;
     background-color: #edf3f8;
     transition: width 0.2s ease-in-out;
+}
+
+.inputSearchNav:hover{
+    outline: 1px solid #0a66c2;
 }
 
 .inputSearchNav:focus {
@@ -228,9 +269,31 @@
     padding: 15px;
 }
 
+.active{
+    border-bottom: 2px solid black;
+}
+
+.activeSvg{
+    animation: pulse-opacity 0.4s ease;
+}
+
+@keyframes pulse-opacity {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+
 .divIconsNav:hover .textIconsNav,
 .dropdown-icon:hover {
     color: black;
+    cursor: pointer;
+}
+
+.changeColorSvg{
     cursor: pointer;
 }
 
@@ -261,10 +324,12 @@
     color: #0a66c2;
     border-color: #0a66c2;
     font-size: 12px;
+    transition: background-color 0.3s ease;
 }
 
 .buttonDropdown:hover {
     outline: solid 1px #0a66c2;
+    background-color: #0a66c225;
 }
 
 .linkDropdown {
@@ -288,7 +353,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+    margin-top: 10px;   
 }
 
 .customNavDropdown {
@@ -327,8 +392,8 @@
     margin-top: 5px;
 }
 
-.bi-person-circle,
-.bi-grid-3x3-gap-fill {
+
+.iconsCustomMargin{
     margin-top: 5px;
 }
 
@@ -444,3 +509,4 @@
 .mobile-menu-closed {
     animation: slideOut 0.5s ease-in-out;
 }
+
