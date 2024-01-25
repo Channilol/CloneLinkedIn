@@ -33,6 +33,9 @@
 
 #pPiccolo {
     font-size: 13px;
+    position: relative;
+    bottom: 8px;
+    padding-bottom: 0px !important;
 }
 
 #pGiorno {
@@ -43,4 +46,6 @@
 #consiglia {
     background-color: white;
     padding-left: 55px;
+    padding-bottom: 5px;
+    font-size: 14px;
 }
