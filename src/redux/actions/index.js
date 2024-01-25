@@ -1,5 +1,48 @@
 export const GET_USER_FETCH = 'GET_USER_FETCH' 
 export const GET_USER_EXPERIENCES = 'GET_USER_EXPERIENCES'
+export const GET_POST_FETCH = 'GET_POST_FETCH'
+
+export const getPostFetchAction = (url, token) => {
+    return async dispatch => {
+        try {
+            const res = await fetch(url, token)
+            if (res.ok) {
+                console.log('post fetchati con successo')
+                const dataRaw = await res.json()
+                const dataReversedSort = dataRaw.reverse()
+                const data = dataReversedSort.slice(0,5)
+                dispatch({
+                    type: GET_POST_FETCH,
+                    payload: data
+                })
+            } else {
+                console.log('Errore nel caricamento dati')
+            }
+        } catch (err) {
+            console.log('Errore:', err)
+        }
+    }
+}
+
+export const getUserFetchAction = (url, token) => {
+    return async dispatch => {
+        try {
+            const res = await fetch(url, token)
+            if (res.ok) {
+                console.log('dati fetchati con successo')
+                const data = await res.json()
+                dispatch({
+                    type: GET_USER_FETCH,
+                    payload: data
+                })
+            } else {
+                console.log('Errore nel caricamento dati')
+            }
+        } catch (err) {
+            console.log('Errore:', err)
+        }
+    }
+}
 
 export const getUserExperiencesAction = (url) => {
     return async dispatch => {
@@ -22,26 +65,6 @@ export const getUserExperiencesAction = (url) => {
                 console.log('Errore nel caricamento dati')
             }
         } catch(err) {
-            console.log('Errore:', err)
-        }
-    }
-}
-
-export const getUserFetchAction = (url, token) => {
-    return async dispatch => {
-        try {
-            const res = await fetch(url, token)
-            if (res.ok) {
-                console.log('dati fetchati con successo')
-                const data = await res.json()
-                dispatch({
-                    type: GET_USER_FETCH,
-                    payload: data
-                })
-            } else {
-                console.log('Errore nel caricamento dati')
-            }
-        } catch (err) {
             console.log('Errore:', err)
         }
     }

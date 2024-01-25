@@ -49,6 +49,11 @@
 #logoNavSvg {
     margin-left: 5%;
     margin-right: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+#logoNavSvg:hover{
+    box-shadow: 0px 0px 8px 2px #0a66c275;
 }
 
 
@@ -70,6 +75,10 @@
     align-items: center;
     background-color: #edf3f8;
     transition: width 0.2s ease-in-out;
+}
+
+.inputSearchNav:hover{
+    outline: 1px solid #0a66c2;
 }
 
 .inputSearchNav:focus {
@@ -259,6 +268,24 @@
     align-items: center;
     padding: 15px;
 }
+
+.active{
+    border-bottom: 2px solid black;
+}
+
+.activeSvg{
+    animation: pulse-opacity 0.4s ease;
+}
+
+@keyframes pulse-opacity {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
 
 .divIconsNav:hover .textIconsNav,
 .dropdown-icon:hover {
@@ -482,3 +509,4 @@
 .mobile-menu-closed {
     animation: slideOut 0.5s ease-in-out;
 }
+

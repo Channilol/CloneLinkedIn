@@ -1,15 +1,27 @@
 import './CreateNewPost.css'
 import { useSelector } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import NewPostForm from '../newPostForm/NewPostForm'
 
 const CreateNewPost = () => {
+    const [isNewPostOn, setIsNewPostOn] = useState()
     const loggedUser = useSelector((state) => state.user.userFetch)
+
     
+    const handleNewPost = () => {
+        if(isNewPostOn) {
+            setIsNewPostOn(false)
+        } else {
+            setIsNewPostOn(true)
+        }
+    }
+
     return (
+        <>
         <div className='createNewPost'>
             <div>
                 <img src={loggedUser.image} alt='ImgProfilo' />
-                <button>Avvia un post</button>
+                <button onClick={() => handleNewPost()}>Avvia un post</button>
             </div>
             <div className='newPostIcons'>
                 <div>
@@ -34,6 +46,9 @@ const CreateNewPost = () => {
                 </div>
             </div>
         </div>
+        {isNewPostOn ? (<NewPostForm close={handleNewPost}/>) : ''}
+        </>
+        
     )
 }
 
