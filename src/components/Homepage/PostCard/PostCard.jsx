@@ -15,6 +15,11 @@ const PostCard = ({datiPost}) => {
     const loggedUser = useSelector((state) => state.user.userFetch)
     const navigate = useNavigate()
 
+    const handleImageClick = () => {
+        navigate(`/profile/${datiPost.user._id}`);
+        window.scrollTo(0, 0);
+      };
+
     const handleCommentBox = () => {
         if(isCommentBoxOn) {
             setIsCommentBoxOn(false)
@@ -67,9 +72,9 @@ const PostCard = ({datiPost}) => {
             </div>
             ) : ''}
             <div className='postCardTop'>
-                <img src={datiPost.user.image} alt='immagine post' onClick={() => navigate(`/profile/${datiPost.user._id}`)}/>
+                <img src={datiPost.user.image} alt='immagine post' onClick={handleImageClick}/>
                 <div className='postCardTopText'>
-                    <h3>{datiPost.user.username}</h3>
+                    <h3 onClick={handleImageClick}>{datiPost.user.username}</h3>
                     <p>{datiPost.user.title}</p>
                     <p>{datiPost.createdAt}</p>
                 </div>

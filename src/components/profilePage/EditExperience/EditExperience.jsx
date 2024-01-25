@@ -5,6 +5,7 @@ import { getUserExperiencesAction } from '../../../redux/actions'
 
 const EditExperience = ({experience, close}) => {
     const loggedUser = useSelector((state) => state.user.userFetch)
+    const [experiencePic, setExperiencePic] = useState(null)
     const [experienceData, setExperienceData] = useState({
         role: '',
         company: '',
@@ -18,8 +19,44 @@ const EditExperience = ({experience, close}) => {
     useEffect(() => {
         setExperienceData(experience)
         console.log(experience)
-        console.log(loggedUser._id)
+        console.log('questo è l id user' + experience.user)
+        console.log('questo è l id experience' + experience._id)
     },[])
+
+    useEffect(() => {
+        console.log(experiencePic)
+    },[experiencePic])
+
+    const handleExperiencePicUpload = async () => {
+        if (experiencePic) {
+            const formData = new FormData()
+            formData.append('experience', experiencePic)
+            try {
+                const res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${experience.user}/experiences/${experience._id}/picture`, {
+                    method: 'POST',
+                    headers: {
+                      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2VkMzYwMGJlMTAwMTgzYTg2OTgiLCJpYXQiOjE3MDU5MTgxNjMsImV4cCI6MTcwNzEyNzc2M30.7DYncSKPLwIy7aJwIhh6w0OhrQZ4E4_M74Hg7oUY_DE',
+                    },
+                    body: formData,
+                  })
+                  if (res.ok) {
+                    console.log('Immagine caricata con successo!')
+                    dispatch(getUserExperiencesAction('https://striveschool-api.herokuapp.com/api/profile/65ae3ed3600be100183a8698/experiences', {
+                    method: 'GET',
+                    headers: {
+                      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2VkMzYwMGJlMTAwMTgzYTg2OTgiLCJpYXQiOjE3MDU5MTgxNjMsImV4cCI6MTcwNzEyNzc2M30.7DYncSKPLwIy7aJwIhh6w0OhrQZ4E4_M74Hg7oUY_DE',
+                      'Content-Type': 'application/json'
+                    },
+                    }))
+                    setExperiencePic(null)
+                  } else {
+                    console.log('Errore nel caricamento dati')
+                  }
+            } catch(err) {
+                console.log('Errore:', err)
+            }     
+        }
+    }
 
     const handleEditExperience = async (data) => {
         try {
@@ -43,6 +80,9 @@ const EditExperience = ({experience, close}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         handleEditExperience(experienceData)
+        if(experiencePic) {
+            handleExperiencePicUpload()
+        }
         close()
     }
 
@@ -95,6 +135,15 @@ const EditExperience = ({experience, close}) => {
                     })}/>
                 </div> 
                 <button type='submit'>Invia</button>
+                <div className='newExperienceUploadImg'>
+                    <label htmlFor="editPostPic">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0a66c2" className="bi bi-image" viewBox="0 0 16 16">
+                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                            <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        </label>
+                    <input className='inputPostPic' type='file' id='editPostPic' name='editPostPic' accept='image/png, image/jpg, image/gif' onChange={(e) => setExperiencePic(e.target.files[0])} />
+                </div>
             </form>
         </div>
     )
