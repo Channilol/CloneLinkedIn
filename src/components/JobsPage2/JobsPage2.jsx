@@ -1,4 +1,5 @@
 import './JobsPage2.css'
+import DettagliLavoro from './DettagliLavoro/DettagliLavoro'
 
 const JobsPage2 = () => {
     return (
@@ -11,7 +12,7 @@ const JobsPage2 = () => {
                 <h1>LEFT</h1>
             </div>
             <div className='jobsPageDueRight'>
-                <h1>Right</h1>
+                <DettagliLavoro />
             </div>
         </div>
         </> 

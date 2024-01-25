@@ -1,0 +1,52 @@
+#contenitorePrincipale {
+    background-color: white;
+    padding: 20px;
+    overflow-y: scroll;
+    height: calc(90vh - 70px);
+}
+
+#tipi {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.icone {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.icone p {
+    padding-left: 15px;
+}
+
+#button1 {
+    padding: 5px 10px 5px 10px;
+    border: 1.5px solid rgb(8, 8, 150);
+    border-radius: 25px;
+    margin-right: 10px;
+    background-color: rgb(8, 8, 150);
+    color: white;
+}
+#button2 {
+    padding: 5px 10px 5px 10px;
+    border: 1.5px solid rgb(8, 8, 150);
+    border-radius: 25px;
+    margin-right: 10px;
+    background-color: white;
+    color: rgb(8, 8, 150);
+}
+
+#descrizione h2 {
+   margin-bottom: 15px;
+}
+
+#descrizione p {
+   margin-bottom: 15px;
+}
+
+#descrizione li {
+   margin-bottom: 15px;
+   list-style: inside !important;
+}
+
