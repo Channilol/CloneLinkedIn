@@ -35,6 +35,7 @@ const Homepage = () => {
                     <CreateNewPost/>
                     <ConsigliPerTe />
                     <PostContainer />
+                    
                     {/* CENTER */}
                     
                 </div>
