@@ -4,6 +4,7 @@
     border: 1px solid #e0dfdb;
     border-radius: 10px;
     padding:10px;   
+    box-sizing: border-box;
 }
 .ricercheSuggerite h2 {
     font-size: 1.1em;
