@@ -37,6 +37,27 @@ const JobsHeader = () => {
         };
     }, []);
 
+    const dropdownRef = useRef(null)
+    const otherDropdownRef = useRef(null)
+
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setDropdownOpen(false);
+            }
+
+            if (otherDropdownRef.current && !otherDropdownRef.current.contains(event.target)) {
+                setOtherDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('click', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+        };
+    }, [isDropdownOpen, isOtherDropdownOpen]);
+
     return (
         <header id="jobsHeader">
             <svg xmlns="http://www.w3.org/2000/svg" id="logoNavJobs" width="37" height="37" fill="#0a66c2" className="bi bi-linkedin svgPointer" viewBox="0 0 16 16" onClick={() => navigate('/')}>
@@ -54,13 +75,13 @@ const JobsHeader = () => {
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg>
                 </div>
-                <input type="text" className='inputSearchNavJobs' placeholder="Cerca offerte di lavoro /..." onClick={handleSearchIconClick}/>
+                <input type="text" className='inputSearchNavJobs' placeholder="Cerca offerte di lavoro /..." onClick={handleSearchIconClick} />
                 <div id="iconLocationNavJobs">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" class="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16">
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                     </svg>
                 </div>
-                <input type="text" id='inputLocationNavJobs' placeholder="Città, stato o CAP" onClick={handleSearchIconClick}/>
+                <input type="text" id='inputLocationNavJobs' placeholder="Città, stato o CAP" onClick={handleSearchIconClick} />
 
                 {isSearchVisible && (
                     <div id="boxSearchMobileJobs">
@@ -69,10 +90,10 @@ const JobsHeader = () => {
                         </svg>
                         <input type="text" className="inputSearchMobileJobs" placeholder="Cerca offerte di lavoro /..." />
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16"
-                        id="iconLocationMobileJobs">
+                            id="iconLocationMobileJobs">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                         </svg>
-                        <input type="text" className='inputSearchMobileJobs' placeholder="Città, stato o CAP" style={{marginLeft: "20px"}}/>
+                        <input type="text" className='inputSearchMobileJobs' placeholder="Città, stato o CAP" style={{ marginLeft: "20px" }} />
                     </div>
                 )}
             </div>
@@ -90,10 +111,9 @@ const JobsHeader = () => {
                         <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
                     </svg>
                 </div>
-                <div className="divNavJobs">
-                    <svg onClick={() => navigate('/jobspage')} xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-briefcase-fill svgPointer" viewBox="0 0 16 16">
-                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5" />
-                        <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z" />
+                <div className="divNavJobs" id="divIconJobsActive">
+                    <svg onClick={() => navigate('/jobspage')} xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-briefcase svgPointer" viewBox="0 0 16 16" id="svgIconActiveJobs">
+                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5" />
                     </svg>
                 </div>
                 <div className="divNavJobs">
@@ -110,7 +130,7 @@ const JobsHeader = () => {
                 <div id="sectionMenuNavJobs">
                     <div className="divIconsMenuNav">
 
-                        <div className='dropdown-icon' onClick={toggleDropdown}>
+                        <div className='dropdown-icon' onClick={toggleDropdown} ref={dropdownRef}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-person-circle svgPointer" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                                 <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
@@ -154,7 +174,7 @@ const JobsHeader = () => {
 
 
                     <div className="divIconsMenuNav" id="borderContainerIconsNav">
-                        <div className="dropdown-icon" onClick={toggleOtherDropdown}>
+                        <div className="dropdown-icon" onClick={toggleOtherDropdown} ref={otherDropdownRef}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-grid-3x3-gap-fill svgPointer" viewBox="0 0 16 16">
                                 <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
                             </svg>

@@ -137,6 +137,7 @@
 #navbarJobs {
     display: flex;
     margin-left: 30px;
+    padding-top: 9px;
 }
 
 .divNavJobs {
@@ -336,4 +337,13 @@
 
 .svgPointer{
     cursor: pointer;
+}
+
+.svgPointer:hover{
+    fill:black;
+}
+
+#divIconJobsActive{
+    border-bottom: 2px solid black;
+    filter: drop-shadow(22px, 22px, 22px red)
 }

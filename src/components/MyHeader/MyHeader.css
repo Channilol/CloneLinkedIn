@@ -260,6 +260,10 @@
     padding: 15px;
 }
 
+.active{
+    border-bottom: 2px solid black;
+}
+
 .divIconsNav:hover .textIconsNav,
 .dropdown-icon:hover {
     color: black;
@@ -482,3 +486,4 @@
 .mobile-menu-closed {
     animation: slideOut 0.5s ease-in-out;
 }
+
