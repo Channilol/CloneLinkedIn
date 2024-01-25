@@ -1,7 +1,13 @@
 import MyHeader from "../MyHeader/MyHeader";
 import "./Jobspage.css"
 import MyOfferte from "./MyOfferte/MyOfferte";
+<<<<<<< HEAD
 import RicercheSuggerite from "./RicercheSuggerite/RicercheSuggerite";
+=======
+import SelezioneInCorso from "./SelezioneInCorso/SelezioneInCorso";
+import RicercheSuggerite from "./RicercheSuggerite/RicercheSuggerite";
+
+>>>>>>> ed73269c9f5d7d5c4a5534258e9eebeffc2f347a
 
 const Jobspage = () => {
     return (
