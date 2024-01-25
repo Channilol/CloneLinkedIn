@@ -1,6 +1,6 @@
 import "./DettagliLavoro.css";
 
-const DettagliLavoro = () => {
+const DettagliLavoro = ({jobData}) => {
   return (
     <div id="contenitorePrincipale">
       <div>

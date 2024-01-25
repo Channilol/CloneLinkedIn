@@ -1,4 +1,3 @@
-import JobCard from "../JobsPage2/JobCard/JobCard";
 import MyHeader from "../MyHeader/MyHeader";
 import "./Jobspage.css"
 import MyOfferte from "./MyOfferte/MyOfferte";
@@ -24,16 +23,16 @@ const Jobspage = () => {
       <MyHeader />
       {isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""} 
         <div className='jobspage'>
-            <div className='jobspageLeft'>
-                
+            <div className='jobspageLeft'>               
                 <MyOfferte />
             </div>
             <div className='jobspageCenterAndRight'>
                 <div className='jobspageCenter'>
                 <RicercheSuggerite />
+                <SelezioneInCorso />
                 <ReccommendedForYou />
                     {/* CENTER */}
-                   <SelezioneInCorso />
+                   
                 </div>
                     <div className='jobspageRight'>
                         <Minifooter open={handleOpenFooter}/> 
