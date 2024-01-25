@@ -429,6 +429,7 @@
     filter: drop-shadow(22px, 22px, 22px red)
 }
 
+
 #boxIconMobileJobs {
     display: none;
 }
@@ -439,4 +440,8 @@
         position: absolute;
         right: 0;
     }
+
+#jobsHeader .dropdown-icon img {
+    margin-top: 0px;
+
 }

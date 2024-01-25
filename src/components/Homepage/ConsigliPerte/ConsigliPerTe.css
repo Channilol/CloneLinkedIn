@@ -54,6 +54,7 @@
   }
 .cardConsigli {
     display: flex;
+    align-items: center;
     max-width: 100%;
     margin: 10 0px;
     overflow: hidden; 
@@ -62,8 +63,8 @@
     padding-left: 3%;
 }
 .cardConsigli img {
-    width: 75px; 
-    height: 75px; 
+    width: 60px; 
+    height: 60px; 
     object-fit: cover; 
 }
 .ConsigliH{

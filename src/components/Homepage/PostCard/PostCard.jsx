@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import EditPost from '../EditPost/EditPost'
 import DeletePost from '../DeletePost/DeletePost'
+import CommentiCard from '../CommentiCard/CommentiCard'
 
 const PostCard = ({datiPost}) => {
     const [commentToSend, setCommentToSend] = useState('')
@@ -123,7 +124,8 @@ const PostCard = ({datiPost}) => {
                         </form>
                         </div>
                         <div className='postComments'>
-                            <p>commenti da mettere</p>
+                            <CommentiCard />
+                            <CommentiCard />
                         </div>
                     </div>
                 ) : ''}

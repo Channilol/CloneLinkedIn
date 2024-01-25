@@ -13,6 +13,7 @@ import PostContainer from './PostContainer/PostContainer'
 import { getUserFetchAction } from '../../redux/actions'
 import { getPostFetchAction } from '../../redux/actions'
 
+
 const Homepage = () => {
     const [isFooterOn, setIsFooterOn] = useState(false)
     const apiUrl = `https://striveschool-api.herokuapp.com/api/profile/me`
@@ -26,11 +27,12 @@ const Homepage = () => {
       }
     const dispatch = useDispatch()
 
-    const handleOpenFooter = () => {
-        setIsFooterOn(true)
-    }
-    const handleCloseFooter = () => {
-        setIsFooterOn(false)
+    const handleBigFooter = () => {
+        if(isFooterOn) {
+            setIsFooterOn(false)
+        } else {
+            setIsFooterOn(true)
+        }     
     }
 
     useEffect(() => {
@@ -42,7 +44,7 @@ const Homepage = () => {
     return (
         <>
       <MyHeader />
-       {isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""} 
+       {isFooterOn ? (<BigFooter close={handleBigFooter} />) : ""} 
         <div className='homepage'>      
             <div className='homepageLeft'>
                 <WelcomeMessage/>
@@ -54,13 +56,12 @@ const Homepage = () => {
                     <CreateNewPost/>
                     <ConsigliPerTe />
                     <PostContainer />
-                    
                     {/* CENTER */}
                     
                 </div>
                 <div className='homepageRight'>
                     <Notizie />
-                    <Minifooter open={handleOpenFooter}/> 
+                    <Minifooter open={handleBigFooter}/> 
                     
                     {/* RIGHT */}
                 </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './MyHeader.css'
 
 const MyHeader = () => {
@@ -7,7 +8,9 @@ const MyHeader = () => {
     const [isOtherDropdownOpen, setOtherDropdownOpen] = useState(false);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const [jobSearchQuery, setJobSearchQuery] = useState('')
 
+    const loggedUser = useSelector((state) => state.user.userFetch)
     const searchRef = useRef(null)
     const navigate = useNavigate()
     const location = useLocation()
@@ -16,6 +19,13 @@ const MyHeader = () => {
 
     const isActive = (path) => {
         return currentPath === path;
+    }
+
+    const handleHeaderSubmit = (e) => {
+        e.preventDefault()
+        if(jobSearchQuery) {
+            navigate(`/jobspage2/${jobSearchQuery}`)
+        }
     }
 
     const [homeIcon, setHomeIcon] = useState(
@@ -133,14 +143,20 @@ const MyHeader = () => {
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg>
                 </div>
-                <input type="text" className="inputSearchNav" placeholder="Cerca" />
+                <form onSubmit={(e) => handleHeaderSubmit(e)}>
+                    <input type="text" className="inputSearchNav" placeholder="Cerca" onChange={(e) => setJobSearchQuery(e.target.value)}/>   
+                </form>
+                
 
                 {isSearchVisible && (
                     <div id="boxSearchMobile">
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-search changeColorSvg" viewBox="0 0 16 16" id="iconSearchMobile">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                         </svg>
-                        <input type="text" id="inputSearchMobile" placeholder="Cerca" />
+                        <form onSubmit={(e) => handleHeaderSubmit(e)}>
+                            <input type="text" id="inputSearchMobile" placeholder="Cerca" onChange={(e) => setJobSearchQuery(e.target.value)}/> 
+                        </form>
+                        
                     </div>
                 )}
 
@@ -185,11 +201,8 @@ const MyHeader = () => {
                     </svg>
                     <p className="textIconsNav">Notifiche</p>
                 </div>
-                <div className="mobile-menu-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-person-circle changeColorSvg" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                        <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                    </svg>
+                <div className="mobile-menu-item" onClick={() => navigate('/profile/me')}>
+                    {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                     <p className="textIconsNav">Profilo</p>
                 </div>
                 <div className="mobile-menu-item">
@@ -233,10 +246,7 @@ const MyHeader = () => {
                 <div className="containerIconsNav">
 
                     <div className="dropdown-icon" onClick={toggleDropdown} ref={dropdownRef} style={{ marginRight: "15px" }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-person-circle iconsCustomMargin customPositionSvg" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                            <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                        </svg>
+                        {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                         <div className="boxDropdown">
                             <p>Tu</p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#404040" className="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -249,13 +259,10 @@ const MyHeader = () => {
 
                             <div>
                                 <div className='firstSectionDropdown'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
-                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                        <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                                    </svg>
+                                    {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                                     <div className='textFirstSection'>
-                                        <p className="NomeSectionDropdown">Nome Utente</p>
-                                        <p>Titolo</p>
+                                        <p className="NomeSectionDropdown">{loggedUser ? loggedUser.username : 'Loading...'}</p>
+                                        <p>{loggedUser.title}</p>
                                     </div>
                                 </div>
                                 <button className="buttonDropdown" onClick={() => {

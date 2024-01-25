@@ -1,0 +1,51 @@
+#contenitoreFotoCommento {
+    display: flex;
+    background-color: white;
+    padding: 15px 5px 5px 0;
+}
+
+#nome {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+
+#foto {
+    padding: 0 5px 0 5px;
+}
+
+#contenitoreCommento {
+    background-color: #f2f2f2;
+    padding: 10px 5px 10px 10px;
+    width: 88%;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+}
+
+#contenitoreCommento p {
+    padding-bottom: 5px;
+}
+
+#pBlu {
+    color: rgb(50, 50, 206);
+    font-size: 14px;
+}
+
+#pPiccolo {
+    font-size: 13px;
+    position: relative;
+    bottom: 8px;
+    padding-bottom: 0px !important;
+}
+
+#pGiorno {
+    display: flex;
+    align-items: center;
+}
+
+#consiglia {
+    background-color: white;
+    padding-left: 55px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
