@@ -9,6 +9,38 @@
     min-height: 70px;
 }
 
+@media screen and (min-width: 912px) and (max-width: 1280px) {
+    .custom-navbar{
+        padding-left: 5%;
+    }    
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+    .custom-navbar{
+        padding-left: 8%;
+    }    
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1500px){
+    .custom-navbar{
+        padding-left: 12%;
+    }    
+}
+
+
+@media screen and (min-width: 1500px) and (max-width: 1600px){
+    .custom-navbar{
+        padding-left: 14%;
+    }    
+}
+
+
+@media screen and (min-width: 1600px){
+    .custom-navbar{
+        padding-left: 18%;
+    }    
+}
+
 .custom-navbar>svg:first-of-type {
     min-width: 37px;
     min-height: 37px;
@@ -234,6 +266,10 @@
     cursor: pointer;
 }
 
+.changeColorSvg{
+    cursor: pointer;
+}
+
 .divIconsNav:hover .changeColorSvg,
 .dropdown-icon:hover .changeColorSvg {
     fill: black;
@@ -261,10 +297,12 @@
     color: #0a66c2;
     border-color: #0a66c2;
     font-size: 12px;
+    transition: background-color 0.3s ease;
 }
 
 .buttonDropdown:hover {
     outline: solid 1px #0a66c2;
+    background-color: #0a66c225;
 }
 
 .linkDropdown {
@@ -288,7 +326,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+    margin-top: 10px;   
 }
 
 .customNavDropdown {
@@ -327,8 +365,8 @@
     margin-top: 5px;
 }
 
-.bi-person-circle,
-.bi-grid-3x3-gap-fill {
+
+.iconsCustomMargin{
     margin-top: 5px;
 }
 

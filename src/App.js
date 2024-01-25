@@ -27,8 +27,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <MyHeader/> 
+      <div className="App">   
         <Routes>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/jobspage' element={<Jobspage />} />

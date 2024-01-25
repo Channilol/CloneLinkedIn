@@ -14,6 +14,7 @@ import EducationComponent from './EducationComponent/EducationComponent'
 import { getUserExperiencesAction } from '../../redux/actions'
 import { useParams } from 'react-router-dom'
 import Footer from '../footer/Footer'
+import MyHeader from '../MyHeader/MyHeader'
 
 const ProfilePage = () => {
     const iduser = useParams();
@@ -40,6 +41,7 @@ const ProfilePage = () => {
 
     return (
         <>
+        <MyHeader />
         <div className='profilePage'>
             <div className='profilePageLeft'>
                 <ProfiloTop />
