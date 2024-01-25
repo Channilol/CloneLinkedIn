@@ -38,11 +38,11 @@
     justify-content: center;
     position: absolute;
     bottom: -45px;
-
+    overflow: hidden;
   }
   .camera{
-    height: 45px;
-    width: 45px;
+    height: 100%;
+    width: 100%;
   }
 
   .add-photo-link {
@@ -65,7 +65,7 @@
     align-items: center;
     justify-content: space-between;
     text-align: justify;
-    padding: 20px;
+    padding: 5px 20px 0 20px;
     
     
   }
@@ -93,12 +93,12 @@
 
   }
   .welcome-container hr{
-    margin-top: 10px;
-    border: solid 0.3px #cbcbcb;
+    border: solid 0.1px #cbcbcb;
+    margin: 5px 0;
   }
   
   .elementContainer{
     display: flex;
-    padding: 20px;
+    padding: 5px 20px 0 20px;
   }
   
