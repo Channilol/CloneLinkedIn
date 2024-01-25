@@ -10,8 +10,10 @@ import Notizie from './Notizie/Notizie'
 import MyHeader from '../MyHeader/MyHeader'
 import CreateNewPost from './createNewPost/CreateNewPost'
 import PostContainer from './PostContainer/PostContainer'
+import CommentiCard from './CommentiCard/CommentiCard'
 import { getUserFetchAction } from '../../redux/actions'
 import { getPostFetchAction } from '../../redux/actions'
+
 
 const Homepage = () => {
     const [isFooterOn, setIsFooterOn] = useState(false)
@@ -54,7 +56,7 @@ const Homepage = () => {
                     <CreateNewPost/>
                     <ConsigliPerTe />
                     <PostContainer />
-                    
+                    <CommentiCard />
                     {/* CENTER */}
                     
                 </div>
