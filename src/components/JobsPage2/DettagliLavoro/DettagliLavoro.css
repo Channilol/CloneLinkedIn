@@ -1,8 +1,12 @@
 #contenitorePrincipale {
     background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     padding: 20px;
     overflow-y: scroll;
-    height: calc(90vh - 70px);
+    height: 95vh;
+    position: sticky;
+    top: 0;
 }
 
 #tipi {

@@ -5,6 +5,7 @@ border-radius: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-bottom: 20px;
 }
 .recommendedForYou p {
     font-size: 0.8em;

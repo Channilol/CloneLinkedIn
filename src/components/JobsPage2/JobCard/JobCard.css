@@ -1,6 +1,6 @@
 .job-card {
     display: flex;
-    
+    position: relative;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -28,6 +28,10 @@
   .job-info h2, .job-info h3, .job-info p {
     margin: 0;
     
+  }
+
+  .job-info img {
+    border-radius: 50%;
   }
   
   .job-info h2 {
@@ -63,8 +67,8 @@
     cursor: pointer;
     font-size: 0.8em;
   }
-  p img{
-    width: 40px;
+  .job-info p img{
+    width: 35px;
     height: 35px;
     margin-right: 5px;
   }
@@ -75,11 +79,20 @@
     margin-right: 5px;
 
   }
+
+  .CloseIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
   .CloseIcon img{
     width: 20px;
     height: 20px;
     cursor: pointer;
   }
   
- 
+.job-info p:last-of-type {
+  margin-top: 10px;
+}
   
