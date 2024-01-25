@@ -52,7 +52,6 @@
     justify-content: flex-end;
     align-items: center;
   }
-
 .cardConsigli {
     display: flex;
     max-width: 100%;
@@ -62,7 +61,6 @@
     border-bottom: 1px solid gray;
     padding-left: 3%;
 }
-
 .cardConsigli img {
     width: 75px; 
     height: 75px; 
