@@ -14,7 +14,7 @@
 
 .jobspageLeft {
     width: 100%;
-    animation: homepageLeft 0.3s ease-in-out forwards;
+    animation: homepageLeft 0.3s ease-in-out;
 }
 
 @keyframes homepageLeft {
@@ -31,7 +31,7 @@
 
 .jobspageCenter {
     width: 100%;
-    animation: homepageCenter 0.3s ease-in-out forwards;
+    animation: homepageCenter 0.3s ease-in-out;
 }
 
 @keyframes homepageCenter {
@@ -48,7 +48,7 @@
 
 .jobspageRight {
     width: 100%;
-    animation: homepageRight 0.3s ease-in-out forwards;
+    animation: homepageRight 0.3s ease-in-out;
 }
 
 @keyframes homepageRight {

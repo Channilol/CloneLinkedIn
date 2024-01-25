@@ -15,7 +15,7 @@
 .homepageLeft {
     width: 100%;
     margin-bottom: 30px;
-    animation: homepageLeft 0.3s ease-in-out forwards;
+    animation: homepageLeft 0.3s ease-in-out;
 }
 
 @keyframes homepageLeft {
@@ -33,7 +33,7 @@
 .homepageCenter {
     width: 100%;
     margin-bottom: 30px;
-    animation: homepageCenter 0.3s ease-in-out forwards;
+    animation: homepageCenter 0.3s ease-in-out;
 }
 
 @keyframes homepageCenter {
@@ -43,14 +43,14 @@
     }
     to {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(0);
     }
   
 }
 
 .homepageRight {
     width: 100%;
-    animation: homepageRight 0.3s ease-in-out forwards;
+    animation: homepageRight 0.3s ease-in-out;
 }
 
 @keyframes homepageRight {

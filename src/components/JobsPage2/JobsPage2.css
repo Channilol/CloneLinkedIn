@@ -6,7 +6,7 @@
 
 .jobsPageDueLeft {
     min-width: 250px;
-    animation: homepageLeft 0.5s ease-in-out forwards;
+    animation: homepageLeft 0.5s ease-in-out;
 }
 
 @keyframes homepageLeft {
@@ -23,7 +23,10 @@
 
 .jobsPageDueRight {
     width: 100%;
-    animation: homepageRight 0.5s ease-in-out forwards;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: homepageRight 0.5s ease-in-out;
 }
 
 @keyframes homepageRight {
@@ -45,10 +48,12 @@
 
     .jobsPageDueLeft {
         display: block;
+        max-width: 450px;
     }
 
     .jobsPageDueRight {
         width: calc(100% - 250px);
+        position: inherit;
     }
 }
 

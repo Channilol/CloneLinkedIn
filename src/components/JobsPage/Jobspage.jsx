@@ -31,8 +31,8 @@ const Jobspage = () => {
             <div className='jobspageCenterAndRight'>
                 <div className='jobspageCenter'>
                 <RicercheSuggerite />
-                <SelezioneInCorso />
                 <ReccommendedForYou />
+                <SelezioneInCorso />              
                     {/* CENTER */}
                    
                 </div>

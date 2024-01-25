@@ -4,9 +4,15 @@
     border-radius: 5px;
     padding: 20px;
     overflow-y: scroll;
-    height: 95vh;
+    height: 100vh;
     position: sticky;
     top: 0;
+    box-sizing: border-box;
+}
+
+.dettagliLavoroTop {
+    display: flex;
+    justify-content: space-between;
 }
 
 #tipi {
@@ -54,3 +60,17 @@
    list-style: inside !important;
 }
 
+.dettagliLavoroTop svg {
+    cursor: pointer;
+    transition: transform 0.2s linear
+}
+
+.dettagliLavoroTop svg:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (min-width:640px) {
+    #contenitorePrincipale {
+        height: 100vh;
+    }
+}

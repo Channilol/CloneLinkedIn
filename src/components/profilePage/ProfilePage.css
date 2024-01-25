@@ -5,7 +5,7 @@
 }
 
 .profilePageLeft {
-    animation: homepageLeft 0.3s ease-in-out forwards;
+    animation: homepageLeft 0.3s ease-in-out;
 }
 
 @keyframes homepageLeft {
@@ -22,7 +22,7 @@
 
 .profilePageRight {
     display: none;
-    animation: homepageRight 0.3s ease-in-out forwards;
+    animation: homepageRight 0.3s ease-in-out;
 }
 
 @keyframes homepageRight {
