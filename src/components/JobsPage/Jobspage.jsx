@@ -11,17 +11,19 @@ import BigFooter from "../Homepage/BigFooter/BigFooter";
 
 const Jobspage = () => {
     const [isFooterOn, setIsFooterOn] = useState(false)
-    const handleOpenFooter = () => {
-        setIsFooterOn(true)
-    }
-    const handleCloseFooter = () => {
-        setIsFooterOn(false)
+    
+    const handleBigFooter = () => {
+        if(isFooterOn) {
+            setIsFooterOn(false)
+        } else {
+            setIsFooterOn(true)
+        }     
     }
 
     return (
         <>
       <MyHeader />
-      {isFooterOn ? (<BigFooter close={handleCloseFooter} />) : ""} 
+      {isFooterOn ? (<BigFooter close={handleBigFooter} />) : ""} 
         <div className='jobspage'>
             <div className='jobspageLeft'>               
                 <MyOfferte />
@@ -35,7 +37,7 @@ const Jobspage = () => {
                    
                 </div>
                     <div className='jobspageRight'>
-                        <Minifooter open={handleOpenFooter}/> 
+                        <Minifooter open={handleBigFooter}/> 
                         {/* RIGHT */}
                     </div>
                 </div>

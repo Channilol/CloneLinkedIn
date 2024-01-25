@@ -8,6 +8,7 @@ import { useState, useEffect } from "react"
 const JobsPage2 = () => {
     const [jobsData, setJobsData] = useState([])
     const [jobSelected, setJobSelected] = useState('')
+    
     const iduser = useParams();
     const token = {
         method: 'GET',
@@ -42,7 +43,7 @@ const JobsPage2 = () => {
 
     useEffect(() => {
         handleJobsFetch()
-    },[])
+    },[iduser])
 
     const handleJobSelected = (job) => {
         setJobSelected(job)

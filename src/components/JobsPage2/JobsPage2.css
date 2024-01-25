@@ -5,12 +5,37 @@
 }
 
 .jobsPageDueLeft {
-    display: none;
     min-width: 250px;
+    animation: homepageLeft 0.5s ease-in-out forwards;
+}
+
+@keyframes homepageLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  
 }
 
 .jobsPageDueRight {
     width: 100%;
+    animation: homepageRight 0.5s ease-in-out forwards;
+}
+
+@keyframes homepageRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  
 }
 
 @media screen and (min-width:640px) {
