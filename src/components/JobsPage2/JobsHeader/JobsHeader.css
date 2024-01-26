@@ -310,6 +310,18 @@
     outline: solid 2px #0a66c2;
     align-items: center;
     background-color: #edf3f8;
+    animation: ingrandire 0.3s ease;
+}
+
+@keyframes ingrandire {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 160px;
+    }
+
 }
 
 @media screen and (max-width: 521px) {
@@ -327,11 +339,31 @@
     .inputSearchMobileJobs {
         width: 180px;
     }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 180px;
+        }
+    }
 }
 
 @media screen and (min-width:410px) and (max-width: 450px) {
     .inputSearchMobileJobs {
         width: 220px;
+    }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 220px;
+        }
     }
 }
 
@@ -339,11 +371,31 @@
     .inputSearchMobileJobs {
         width: 255px;
     }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 225px;
+        }
+    }
 }
 
 @media screen and (min-width:490px) and (max-width: 520px) {
     .inputSearchMobileJobs {
         width: 285px;
+    }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 285px;
+        }
     }
 }
 
@@ -351,11 +403,31 @@
     .inputSearchMobileJobs {
         width: 130px;
     }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 130px;
+        }
+    }
 }
 
 @media screen and (min-width:550px) and (max-width: 580px) {
     .inputSearchMobileJobs {
         width: 140px;
+    }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 140px;
+        }
     }
 }
 
@@ -363,11 +435,31 @@
     .inputSearchMobileJobs {
         width: 155px;
     }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 155px;
+        }
+    }
 }
 
 @media screen and (min-width:620px) and (max-width: 640px) {
     .inputSearchMobileJobs {
         width: 175px;
+    }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 175px;
+        }
     }
 }
 
@@ -375,11 +467,30 @@
     .inputSearchMobileJobs {
         width: 200px;
     }
+
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+    
+        to{
+            width: 200px;
+        } 
+    }
 }
 
 @media screen and (min-width:760px) and (max-width: 812px) {
     .inputSearchMobileJobs {
         width: 220px;
+    }
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+    
+        to{
+            width: 220px;
+        } 
     }
 }
 
@@ -388,31 +499,38 @@
     .inputSearchMobileJobs {
         width: 240px;
     }
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+    
+        to{
+            width: 240px;
+        } 
+    }
 }
 
 @media screen and (min-width: 853px) and (max-width: 992px) {
     .inputSearchMobileJobs {
         width: 290px;
     }
+    @keyframes ingrandire {
+        from {
+            width: 0
+        }
+    
+        to{
+            width: 290px;
+        } 
+    }
 }
 
-@media screen and (min-width: 992px) and (max-width:1012px) {
-    .inputSearchMobileJobs {
-        width: 370px;
+@media screen and (min-width: 992px) {
+    .inputSearchMobileJobs{
+        display: none;
     }
-
-    #iconLocationMobileJobs {
-        left: 52.5%;
-    }
-}
-
-@media screen and (min-width: 1012px) {
-    .inputSearchMobileJobs {
-        width: 380px;
-    }
-
-    #iconLocationMobileJobs {
-        left: 52.5%;
+    #iconLocationMobileJobs{
+        display: none;
     }
 }
 
