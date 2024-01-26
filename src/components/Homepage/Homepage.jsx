@@ -12,6 +12,7 @@ import CreateNewPost from './createNewPost/CreateNewPost'
 import PostContainer from './PostContainer/PostContainer'
 import { getUserFetchAction } from '../../redux/actions'
 import { getPostFetchAction } from '../../redux/actions'
+import { getCommentsFetchAction } from '../../redux/actions'
 
 
 const Homepage = () => {
@@ -38,6 +39,7 @@ const Homepage = () => {
     useEffect(() => {
         dispatch(getUserFetchAction(apiUrl, token))
         dispatch(getPostFetchAction(apiUrlPost, token))
+        dispatch(getCommentsFetchAction())
         console.log('dispatch user e post fatto')
     },[])
     

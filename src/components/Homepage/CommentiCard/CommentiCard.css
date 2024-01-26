@@ -14,6 +14,10 @@
     padding: 0 5px 0 5px;
 }
 
+#foto svg {
+    margin-top: 10px;
+}
+
 #contenitoreCommento {
     background-color: #f2f2f2;
     padding: 10px 5px 10px 10px;
@@ -27,8 +31,9 @@
 }
 
 #pBlu {
-    color: rgb(50, 50, 206);
-    font-size: 14px;
+    color: #0a66c2;
+    font-size: 0.8em;
+    cursor: pointer;
 }
 
 #pPiccolo {
@@ -41,11 +46,17 @@
 #pGiorno {
     display: flex;
     align-items: center;
+    font-size: 0.8em;
+    color: rgba(0,0,0,0.5);
 }
 
 #consiglia {
     background-color: white;
     padding-left: 55px;
     padding-bottom: 5px;
-    font-size: 14px;
+}
+
+#consiglia p {
+    font-size: 0.8em;
+    color: rgba(0,0,0,0.5);
 }

@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import EditPost from '../EditPost/EditPost'
 import DeletePost from '../DeletePost/DeletePost'
-import CommentiCard from '../CommentiCard/CommentiCard'
+import CommentContainer from '../CommentContainer/CommentContainer'
 
 const PostCard = ({datiPost}) => {
-    const [commentToSend, setCommentToSend] = useState('')
     const [isMyPost, setIsMyPost] = useState(false)
     const [isCommentBoxOn, setIsCommentBoxOn] = useState(false)
     const [isEditPostOn, setIsEditPostOn] = useState(false)
@@ -121,18 +120,7 @@ const PostCard = ({datiPost}) => {
                     </div>  
                 </div>
                 {isCommentBoxOn ? (
-                    <div className='postCommentBox'>
-                        <div className='postNewCommentInput'>
-                        <img src={loggedUser.image} alt='imgProfilo' />
-                        <form>
-                           <input type="text" name="commentInput" id="commentInput" value={commentToSend} onChange={(e) => setCommentToSend(e.target.value)}/> 
-                        </form>
-                        </div>
-                        <div className='postComments'>
-                            <CommentiCard />
-                            <CommentiCard />
-                        </div>
-                    </div>
+                    <CommentContainer postData={datiPost}/>
                 ) : ''}
 
             </div>
