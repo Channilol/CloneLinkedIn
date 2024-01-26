@@ -16,17 +16,6 @@ const EditExperience = ({experience, close}) => {
       })
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        setExperienceData(experience)
-        console.log(experience)
-        console.log('questo è l id user' + experience.user)
-        console.log('questo è l id experience' + experience._id)
-    },[])
-
-    useEffect(() => {
-        console.log(experiencePic)
-    },[experiencePic])
-
     const handleExperiencePicUpload = async () => {
         if (experiencePic) {
             const formData = new FormData()

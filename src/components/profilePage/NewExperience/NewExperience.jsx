@@ -42,7 +42,7 @@ const NewExperience = ({close}) => {
             postUserExperience(`https://striveschool-api.herokuapp.com/api/profile/${loggedUser._id}/experiences`, newExperience)
             close()
         } else {
-            console.log('Compila tutti i campi')
+            alert('Compila tutti i campi (endDate non è necessario)')
         }  
     }
 

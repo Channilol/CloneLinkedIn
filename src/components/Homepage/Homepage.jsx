@@ -40,7 +40,6 @@ const Homepage = () => {
         dispatch(getUserFetchAction(apiUrl, token))
         dispatch(getPostFetchAction(apiUrlPost, token))
         dispatch(getCommentsFetchAction())
-        console.log('dispatch user e post fatto')
     },[])
     
     return (

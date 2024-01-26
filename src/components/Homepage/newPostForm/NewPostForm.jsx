@@ -19,7 +19,6 @@ const NewPostForm = ({close}) => {
       }
 
     const createNewPost = async (data) => {
-        console.log(newPostText)
         try {
             const res = await fetch('https://striveschool-api.herokuapp.com/api/posts/', {
                 method: 'POST',

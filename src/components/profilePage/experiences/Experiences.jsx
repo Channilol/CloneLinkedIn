@@ -29,7 +29,6 @@ const Experiences = () => {
 
     const handleExperienceFetch = async (url) => {
         try {
-            console.log(url)
             if(iduser) {
             const res = await fetch(url, {
                 method: 'GET',
@@ -73,14 +72,9 @@ const Experiences = () => {
     }
 
     useEffect(() => {
-        console.log(urlExperienceToShow)
         handleExperienceFetch(urlExperienceToShow)
     },[iduser])
 
-    useEffect(() => {
-        console.log(experienceToShow)
-    },[experienceToShow])
-    
     return(
         <div className='experiences'>
             <div>
