@@ -1,6 +1,7 @@
 import "./MiniFooter.css";
 import { useState, useEffect } from "react";
 import BigFooter from "../BigFooter/BigFooter";
+
 const Minifooter = ({open}) => {
   return (
     <div className="miniFooter">

@@ -11,10 +11,10 @@ const PersonaSingola = ({userData}) => {
     userId = userData._id
   }
 
-  const handleNavigate = async () => {
-    await dispatch(getUserFetchAction(`https://striveschool-api.herokuapp.com/api/profile/${userData._id}`))
-    navigate('/profile/')
-  }
+  const handleNavigate = () => {
+    navigate(`/profile/${userId}`);
+    window.scrollTo(0, 0);
+  };
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -22,11 +22,11 @@ const PersonaSingola = ({userData}) => {
   return (
     <div className="personaSingola">
       <div className="imagineHolder">
-        <img className="userImg" src={userData.image} alt="userImg" onClick={() => navigate(`/profile/${userId}`)}/>
+        <img className="userImg" src={userData.image} alt="userImg" onClick={handleNavigate}/>
       </div>
       <div className="information">
         <div className="first">
-          <h3 onClick={() => navigate(`/profile/${userData._id}`)}>{userData.name}</h3>
+          <h3 onClick={handleNavigate}>{userData.name}</h3>
           <div className='primoP'><p>{userData.bio}</p></div>
         </div>
         <div className="informationBtn">

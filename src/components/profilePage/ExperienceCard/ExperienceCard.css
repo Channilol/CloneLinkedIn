@@ -19,10 +19,15 @@
     width: calc(100% - 75px);
 }
 
+.experienceCardRight h2, .experienceCardRight p {
+    max-width: 80%;
+    overflow-wrap: anywhere;
+}
+
 .editAndDeleteBtns {
     display: flex;
     position: absolute;
-    top: 0;
+    top: -30px;
     right: 0;
 }
 
@@ -51,4 +56,10 @@
 
 .editAndDeleteBtns button:last-of-type {
     background-color: firebrick;
+}
+
+@media screen and (min-width:992px) {
+    .editAndDeleteBtns {
+        top: 0;
+    }
 }

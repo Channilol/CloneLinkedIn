@@ -17,17 +17,22 @@
 }
 
 .pubblicaOfferta {
+    cursor: pointer;
+    width: 90%;
+    margin: 20px auto;
+    height: 40px;
     display: flex;
     align-items: center;
-    border: 1.5px solid rgb(95, 95, 226);
+    justify-content: center;
+    border: 1px solid #0a66c2;
     border-radius: 25px;
-    padding: 10px 20px 10px 20px;
-    margin-top: 15px;
-    color: rgb(95, 95, 226);
+    color: #0a66c2;
+    box-sizing: border-box;
 }
 
 .pubblicaOfferta p {
-    color: rgb(95, 95, 226);
+    color: #0a66c2;
     text-align: center;
-    padding-left: 30px;
+    font-size: 0.8em;
+    margin-left: 10px;
 }
