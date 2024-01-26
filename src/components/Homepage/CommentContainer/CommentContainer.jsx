@@ -29,6 +29,7 @@ const CommentContainer = ({postData}) => {
             })
             if(res.ok) {
                 dispatch(getCommentsFetchAction())
+                setCommentToSend({...commentToSend, comment: ''})
                 alert('Commento postato con successo')
             } else {
                 console.log('Errore nel caricamento dei dati')
