@@ -53,10 +53,13 @@ const CommentContainer = ({postData}) => {
         setPostComments(filteredComments);
     }, [comments, postData._id]);
 
+<<<<<<< HEAD
     useEffect(() => {
         console.log(postComments)
     },[postComments])
 
+=======
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
     return (
         <div className='commentsContainer'>
             <div className='postCommentBox'>
@@ -71,7 +74,11 @@ const CommentContainer = ({postData}) => {
                         postComments.map((comment) => {
                             return <CommentiCard key={comment._id} datiComment={comment} />
                         })
+<<<<<<< HEAD
                     ) : <p>Ancora nessun commento</p>}
+=======
+                    ) : <p className='noComments'>Scrivi tu il primo commento</p>}
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
                 </div>
             </div>
         </div>

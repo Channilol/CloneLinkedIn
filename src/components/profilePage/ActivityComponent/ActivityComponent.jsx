@@ -44,9 +44,15 @@ const ActivityComponent = () => {
         style={{ borderColor: "gray", borderWidth: "0.5px", margin: "20px 0" }}
       />
 
+<<<<<<< HEAD
       <a href="#show-all" className="show-all-activities">
         Mostra tutte le attività
       </a>
+=======
+      <p className="show-all-activities">
+        Mostra tutte le attività
+      </p>
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
     </div>
   );
 };

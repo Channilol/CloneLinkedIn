@@ -7,6 +7,11 @@
 .jobsPageDueLeft {
     min-width: 250px;
     animation: homepageLeft 0.5s ease-in-out;
+<<<<<<< HEAD
+=======
+    max-height: 88vh;
+    overflow-y: scroll;
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 }
 
 @keyframes homepageLeft {
@@ -48,7 +53,12 @@
 
     .jobsPageDueLeft {
         display: block;
+<<<<<<< HEAD
         max-width: 450px;
+=======
+        max-width: 350px;
+        max-height: 100vh;
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
     }
 
     .jobsPageDueRight {

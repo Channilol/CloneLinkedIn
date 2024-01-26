@@ -23,7 +23,7 @@
     width: 125px;
     height: 125px;
     position: absolute;
-    top: 30%;
+    top: 130px;
     left: 20px;
     background-color: white;
     border-radius: 50%;
@@ -124,6 +124,10 @@
     margin: 25px 0 5px 0;
 }
 
+.profiloTop .profileText .profileMainText p:nth-of-type(2) {
+    margin: 10px 0;
+}
+
 .profiloTop .profileText .profileMainText p:last-of-type {
     color: rgba(0,0,0,0.5);
     font-size: 0.8em;
@@ -168,7 +172,7 @@
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 150px;
+    top: 90px;
     right: 20px;
 }
 
@@ -186,10 +190,4 @@
 
 .inputFile {
     display: none;
-}
-
-@media screen and (min-width:992px) {
-    .profiloTop .workingAgency {
-        bottom: 90px;
-    }  
 }

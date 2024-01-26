@@ -4,7 +4,11 @@ import GruppiEventiHastag from './GruppiEventiHastag/GruppiEventiHastag'
 import Minifooter from './MiniFooter/MiniFooter'
 import BigFooter from './BigFooter/BigFooter'
 import { useState, useEffect } from 'react'
+<<<<<<< HEAD
 import { useDispatch, useSelector } from 'react-redux'
+=======
+import { useDispatch } from 'react-redux'
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 import WelcomeMessage from './WelcomeMessage/WelcomeMessage'
 import Notizie from './Notizie/Notizie'
 import MyHeader from '../MyHeader/MyHeader'

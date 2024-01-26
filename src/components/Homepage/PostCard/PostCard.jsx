@@ -11,8 +11,31 @@ const PostCard = ({datiPost}) => {
     const [isCommentBoxOn, setIsCommentBoxOn] = useState(false)
     const [isEditPostOn, setIsEditPostOn] = useState(false)
     const [isDeletePostOn, setIsDeletePostOn] = useState(false)
+<<<<<<< HEAD
     const loggedUser = useSelector((state) => state.user.userFetch)
     const navigate = useNavigate()
+=======
+    const [howManyComments, setHowManyComments] = useState(0)
+    const loggedUser = useSelector((state) => state.user.userFetch)
+    const comments = useSelector((state) => state.comments.comments)
+    const navigate = useNavigate()
+    const dateTimeString = datiPost.createdAt;
+    const dateTime = new Date(dateTimeString);
+
+    const hours = dateTime.getHours().toString().padStart(2, '0');
+    const minutes = dateTime.getMinutes().toString().padStart(2, '0');
+    const time = `${hours}:${minutes}`;
+
+    const day = dateTime.getDate().toString().padStart(2, '0');
+    const month = (dateTime.getMonth() + 1).toString().padStart(2, '0');
+    const year = dateTime.getFullYear();
+    const date = `${day}/${month}/${year}`;
+
+    useEffect(() => {
+        const filteredComments = comments.filter(comment => comment.elementId === datiPost._id);
+        setHowManyComments(filteredComments.length)
+    }, [comments, datiPost._id])
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 
     const handleImageClick = () => {
         navigate(`/profile/${datiPost.user._id}`);
@@ -51,6 +74,15 @@ const PostCard = ({datiPost}) => {
         }
     },[])
 
+<<<<<<< HEAD
+=======
+    useEffect(() => {
+        if(isEditPostOn) {
+            setIsDeletePostOn(false)
+        }
+    },[isEditPostOn])
+
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
     return (
         <div className='postCard'>
             {isDeletePostOn ? (<DeletePost postData={datiPost} close={handleDeletePost}/>) : ''}   
@@ -75,11 +107,15 @@ const PostCard = ({datiPost}) => {
                 <div className='postCardTopText'>
                     <h3 onClick={handleImageClick}>{datiPost.user.username}</h3>
                     <p>{datiPost.user.title}</p>
-                    <p>{datiPost.createdAt}</p>
+                    <p>{time} del {date}</p>
                 </div>
             </div>   
             <div className='postCardCenter'>
+<<<<<<< HEAD
                 <p>{datiPost.text}</p>
+=======
+                <p className='postText'>{datiPost.text}</p>
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
                 {datiPost.image ? (<img src={datiPost.image} alt='fotoPost' />) : ''}
             </div>  
             <div className='postCardBottom'>
@@ -104,6 +140,7 @@ const PostCard = ({datiPost}) => {
                             <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8m0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5"/>
                         </svg>
                         <p>Commenta</p>
+                        <p className='howManyComments'>{howManyComments}</p>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgba(0,0,0,0.5)" className="bi bi-arrow-repeat" viewBox="0 0 16 16">

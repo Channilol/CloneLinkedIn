@@ -94,7 +94,10 @@
     border: none;
     font-size: 1.5em;
     resize: none;
+<<<<<<< HEAD
     padding-bottom: 50px;
+=======
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
     border-bottom: 1px solid #e0dfdb;
 }
 
@@ -129,4 +132,13 @@
 
 .editPost > div > form > .publishPostBtn:disabled:hover {
     transform: none;
+<<<<<<< HEAD
+=======
+}
+
+@media screen and (min-width:675px) {
+    .editPost {
+        transform: translate(-50%, -65%);
+    }
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 }

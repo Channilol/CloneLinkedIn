@@ -243,9 +243,13 @@ const MyHeader = () => {
                     <p className="textIconsNav">Notifiche</p>
                 </div>
 
-                <div className="containerIconsNav">
+                <div className="containerIconsNav" ref={dropdownRef}>
 
+<<<<<<< HEAD
                     <div className="dropdown-icon" onClick={toggleDropdown} ref={dropdownRef} style={{ marginRight: "15px" }}>
+=======
+                    <div className="dropdown-icon" onClick={toggleDropdown}  style={{ marginRight: "15px" }}>
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
                         {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                         <div className="boxDropdown">
                             <p>Tu</p>
@@ -256,12 +260,17 @@ const MyHeader = () => {
                     </div>
                     {isDropdownOpen && (
                         <div className="customNavDropdown dropdown-content">
-
-                            <div>
+                            <div className='borderDivMenu dropdownMenuTop'>
                                 <div className='firstSectionDropdown'>
+<<<<<<< HEAD
                                     {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                                     <div className='textFirstSection'>
                                         <p className="NomeSectionDropdown">{loggedUser ? loggedUser.username : 'Loading...'}</p>
+=======
+                                    {loggedUser ? <img src={loggedUser.image} alt='profilePic' onClick={() => navigate('/profile/me')}/> : <p>Loading...</p>}
+                                    <div className='textFirstSection'>
+                                        <p className="NomeSectionDropdown" onClick={() => navigate('/profile/me')}>{loggedUser ? loggedUser.username : 'Loading...'}</p>
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
                                         <p>{loggedUser.title}</p>
                                     </div>
                                 </div>
@@ -269,30 +278,42 @@ const MyHeader = () => {
                                     navigate('/profile/me')
                                     setDropdownOpen(false)
                                 }}>Visualizza profilo</button>
+<<<<<<< HEAD
+=======
                             </div>
-
-                            <hr />
-                            <h6 className="titleDropdown">Account</h6>
-                            <ul>
-                                <li><a href="#" className="linkDropdown">Impostazioni e Privacy</a></li>
-                                <li><a href="#" className="linkDropdown">Guida</a></li>
-                                <li><a href="#" className="linkDropdown">Lingua</a></li>
-                            </ul>
-                            <hr />
-                            <h6 className="titleDropdown">Gestisci</h6>
-                            <ul>
-                                <li><a href="#" className="linkDropdown">Post e attività</a></li>
-                                <li><a href="#" className="linkDropdown">Account per la pubblicazione</a></li>
-                            </ul>
-                            <hr />
-                            <p><a href="#" className="linkDropdown">Esci</a></p>
+                            <div className='borderDivMenu'>
+                                <h6 className="titleDropdown">Account</h6>
+                                <ul>
+                                    <li><p className="linkDropdown">Impostazioni e Privacy</p></li>
+                                    <li><p className="linkDropdown">Guida</p></li>
+                                    <li><p className="linkDropdown">Lingua</p></li>
+                                </ul>
+                            </div>
+                            
+                            <div className='borderDivMenu'>
+                                <h6 className="titleDropdown">Gestisci</h6>
+                                <ul>
+                                    <li><p className="linkDropdown">Post e attività</p></li>
+                                    <li><p className="linkDropdown">Account per la pubblicazione</p></li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <p className="linkDropdown">Esci</p>
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
+                            </div>
                         </div>
                     )}
                 </div>
 
 
+<<<<<<< HEAD
                 <div className="containerIconsNav" id="borderContainerIconsNav">
                     <div className="dropdown-icon" onClick={toggleOtherDropdown} ref={otherDropdownRef} style={{ paddingLeft: "10px" }}>
+=======
+                <div className="containerIconsNav" id="borderContainerIconsNav"  ref={otherDropdownRef}>
+                    <div className="dropdown-icon" onClick={toggleOtherDropdown} style={{ paddingLeft: "10px" }}>
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-grid-3x3-gap-fill iconsCustomMargin changeColorSvg" viewBox="0 0 16 16">
                             <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
                         </svg>

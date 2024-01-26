@@ -9,6 +9,10 @@ import { useSelector } from 'react-redux';
 function JobCard({jobData, click}) {
   const loggedUser = useSelector((state) => state.user.userFetch)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
   return (
     <div className="job-card" onClick={click}>
         <div className='centerOptimizer'>
@@ -25,7 +29,11 @@ function JobCard({jobData, click}) {
       </div>
 
         </div>
+<<<<<<< HEAD
         <div className='CloseIcon'><img src={CloseIcon} alt="" /></div>
+=======
+        {/* <div className='CloseIcon'><img src={CloseIcon} alt="" /></div> */}
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
       
       
      

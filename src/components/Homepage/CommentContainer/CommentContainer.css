@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+=======
+.commentsContainer, .postCommentBox {
+    animation: boxCommenti 0.3s ease-in-out forwards;
+}
+
+@keyframes boxCommenti {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 .postCommentBox .postNewCommentInput {
     display: flex;
     align-items: center;
@@ -28,4 +46,13 @@
 
 .postCommentBox .postNewCommentInput form input:focus {
     outline: 2px solid #c9c8c4;
+<<<<<<< HEAD
+=======
+}
+
+.noComments {
+    font-size: 0.9em;
+    color: rgba(0,0,0,0.5);
+    margin: 15px 0 5px 0;
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 }

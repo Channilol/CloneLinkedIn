@@ -24,6 +24,10 @@
     width: 88%;
     border-radius: 10px;
     border-top-left-radius: 0;
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 }
 
 #contenitoreCommento p {
@@ -31,6 +35,10 @@
 }
 
 #pBlu {
+<<<<<<< HEAD
+=======
+    display: inline-block;
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
     color: #0a66c2;
     font-size: 0.8em;
     cursor: pointer;
@@ -59,4 +67,41 @@
 #consiglia p {
     font-size: 0.8em;
     color: rgba(0,0,0,0.5);
+<<<<<<< HEAD
+=======
+}
+
+.editAndDeleteComment {
+    display: flex;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.editAndDeleteComment button {
+    cursor: pointer;
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    border: none;
+    background-color: transparent;
+    transition: opacity .15s linear, transform .15s linear;
+}
+
+.editAndDeleteComment button:hover {
+    opacity: 0.6;
+    transform: scale(1.2);
+}
+
+.editAndDeleteComment button:last-of-type {
+    margin-left: 15px;
+}
+
+#contenitoreCommento .commentText  {
+    word-wrap: break-word;
+    overflow-wrap: break-word
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 }

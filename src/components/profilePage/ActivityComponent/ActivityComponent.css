@@ -18,7 +18,7 @@
   }
   
   
-  .activity-component h2,h3,p {
+  .activity-component h2,.activity-component h3,.activity-component p {
     margin: 0;
     color: #1e1e1e; 
   }
@@ -32,7 +32,6 @@
   
   
   .no-posts {
-   
     margin-bottom: 20px; 
   }
   

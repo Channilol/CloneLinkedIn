@@ -32,7 +32,11 @@
 
 .postCardCenter {
     width: 100%;
+<<<<<<< HEAD
     min-height: 100px;
+=======
+    min-height: 50px;
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -47,6 +51,11 @@
 
 .postCardCenter p {
     margin-bottom: 10px;
+<<<<<<< HEAD
+=======
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 }
 
 .postCardBottom .postLikes {
@@ -79,6 +88,7 @@
 .postButtons > div {
     display: flex;
     cursor: pointer;
+<<<<<<< HEAD
     opacity: 0.8;
     transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out
 }
@@ -86,6 +96,30 @@
 .postButtons > div:hover {
     opacity: 1;
     transform: scale(1.1);
+=======
+    position: relative;
+    transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out
+}
+
+.howManyComments {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    color: white;
+    background-color: #0a66c2;
+    font-size: 0.6em;
+    font-weight: 600;
+    padding: 0 3px;
+    border-radius: 5px;
+}
+
+.postButtons > div:hover {
+    transform: scale(1.1);
+}
+
+.postButtons > div > svg {
+    margin-right: 3px;
+>>>>>>> 66791f4b447eef01e155ab6120205f91340b034b
 }
 
 .postCommentBox {

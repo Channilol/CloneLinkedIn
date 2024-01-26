@@ -76,8 +76,8 @@ const ConsigliPerTe = () => {
             <div key={index} className="cardConsigli">
               <img src="./logo192.png" alt="img" />
               <div className="cardConsigliDettagli">
-                <h3>{job.title}</h3>
-                <p>{job.company_name}</p>
+                <h3 className="textTooLong">{job.title}</h3>
+                <p className="textTooLong">{job.company_name}</p>
               </div>
               <div>
                 <button className="card-buttonSegui">
@@ -90,9 +90,9 @@ const ConsigliPerTe = () => {
       {initialCardCount === 3 && (
         <div className="VisPlus-d">
           <h3 className="VisPlus">
-            <a href="#" onClick={handleVisualizzaAltro}>
+            <p onClick={handleVisualizzaAltro}>
               Visualizza altro
-            </a>
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -112,9 +112,9 @@ const ConsigliPerTe = () => {
       {initialCardCount > 3 && (
   <div className="VisPlus-d">
     <h3 className="VisPlus">
-      <a href="#" onClick={handleVisualizzaMeno}>
+      <p onClick={handleVisualizzaMeno}>
         Visualizza meno
-      </a>
+      </p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
