@@ -57,6 +57,7 @@ const ExperienceCard = ({experienceData}) => {
                 <h2>{experienceData.role}</h2>
                 <p>{experienceData.company}, dal {dataFormattata} {experienceData.endDate ? ' al ' + experienceData.endDate : 'ad oggi.'}</p>
                 <p>{experienceData.area}</p>
+                <p>{experienceData.description}</p>
             </div>
             {iduser.user === '65ae3ed3600be100183a8698' ? (
             <div className='editAndDeleteBtns'>

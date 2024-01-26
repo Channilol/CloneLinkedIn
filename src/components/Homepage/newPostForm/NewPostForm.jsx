@@ -33,7 +33,7 @@ const NewPostForm = ({close}) => {
                 dispatch(getPostFetchAction(apiUrlPost, token))
                 alert('Post creato con successo')
             } else {
-                console.log('Errore nel caricamento dati')
+                console.log('Errore nel caricamento dei dati')
             }
         } catch(err) {
             console.log('Errore:', err)
