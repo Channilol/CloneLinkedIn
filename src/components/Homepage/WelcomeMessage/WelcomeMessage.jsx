@@ -5,9 +5,11 @@ import add from "../../Assets/add.png";
 import element from "../../Assets/element.png";
 import camera from "../../Assets/camera.png";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const WelcomeMessage = () => {
   const loggedUser = useSelector((state) => state.user.userFetch);
+  const navigate = useNavigate()
 
   return (
     <div className="welcome-container">
@@ -17,6 +19,7 @@ const WelcomeMessage = () => {
             className="camera"
             src={loggedUser ? loggedUser.image : camera}
             alt=""
+            onClick={() => navigate('/profile/me')}
           />
         </div>
       </div>

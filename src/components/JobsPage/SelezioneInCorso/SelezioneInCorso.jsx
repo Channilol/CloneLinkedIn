@@ -77,9 +77,9 @@ const SelezioneInCorso = () => {
       {initialCardCount === 3 && (
         <div className="VisPlus-d">
           <h3 className="VisPlus">
-            <a href="#" onClick={handleVisualizzaAltro}>
+            <p onClick={handleVisualizzaAltro}>
               Visualizza altro
-            </a>
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -99,9 +99,9 @@ const SelezioneInCorso = () => {
       {initialCardCount > 3 && (
         <div className="VisPlus-d">
           <h3 className="VisPlus">
-            <a href="#" onClick={handleVisualizzaMeno}>
+            <p onClick={handleVisualizzaMeno}>
               Visualizza meno
-            </a>
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

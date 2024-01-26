@@ -38,11 +38,16 @@
     justify-content: center;
     position: absolute;
     bottom: -45px;
-    overflow: hidden;
   }
   .camera{
+    cursor: pointer;
     height: 100%;
     width: 100%;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out
+  }
+  .camera:hover {
+    transform: scale(1.1);
   }
 
   .add-photo-link {
