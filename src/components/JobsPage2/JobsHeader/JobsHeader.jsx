@@ -241,18 +241,18 @@ const JobsHeader = () => {
                                 <hr />
                                 <h6 className="titleDropdown">Account</h6>
                                 <ul>
-                                    <li><a href="#" className="linkDropdown">Impostazioni e Privacy</a></li>
-                                    <li><a href="#" className="linkDropdown">Guida</a></li>
-                                    <li><a href="#" className="linkDropdown">Lingua</a></li>
+                                    <li><p className="linkDropdown">Impostazioni e Privacy</p></li>
+                                    <li><p className="linkDropdown">Guida</p></li>
+                                    <li><p className="linkDropdown">Lingua</p></li>
                                 </ul>
                                 <hr />
                                 <h6 className="titleDropdown">Gestisci</h6>
                                 <ul>
-                                    <li><a href="#" className="linkDropdown">Post e attività</a></li>
-                                    <li><a href="#" className="linkDropdown">Account per la pubblicazione</a></li>
+                                    <li><p className="linkDropdown">Post e attività</p></li>
+                                    <li><p className="linkDropdown">Account per la pubblicazione</p></li>
                                 </ul>
                                 <hr />
-                                <p><a href="#" className="linkDropdown">Esci</a></p>
+                                <p className="linkDropdown">Esci</p>
                             </div>
                         )}
                     </div>
