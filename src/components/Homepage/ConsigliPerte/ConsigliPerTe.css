@@ -112,3 +112,52 @@
   margin-right: 3%;
   margin-left: 3%;
 }
+
+.textTooLong{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 400px){
+  .textTooLong{
+    width: 160px;
+  } 
+}
+
+@media screen and (min-width: 400px) and (max-width: 450px){
+  .textTooLong{
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 500px){
+  .textTooLong{
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 530px){
+  .textTooLong{
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+  .textTooLong{
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+  .textTooLong{
+    width: 210px;
+  }
+}
+
+@media screen and (min-width:1200px ){
+  .textTooLong{
+    width: auto;
+  }
+  
+}
