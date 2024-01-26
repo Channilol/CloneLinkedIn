@@ -243,9 +243,9 @@ const MyHeader = () => {
                     <p className="textIconsNav">Notifiche</p>
                 </div>
 
-                <div className="containerIconsNav">
+                <div className="containerIconsNav" ref={dropdownRef}>
 
-                    <div className="dropdown-icon" onClick={toggleDropdown} ref={dropdownRef} style={{ marginRight: "15px" }}>
+                    <div className="dropdown-icon" onClick={toggleDropdown}  style={{ marginRight: "15px" }}>
                         {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
                         <div className="boxDropdown">
                             <p>Tu</p>
@@ -291,8 +291,8 @@ const MyHeader = () => {
                 </div>
 
 
-                <div className="containerIconsNav" id="borderContainerIconsNav">
-                    <div className="dropdown-icon" onClick={toggleOtherDropdown} ref={otherDropdownRef} style={{ paddingLeft: "10px" }}>
+                <div className="containerIconsNav" id="borderContainerIconsNav"  ref={otherDropdownRef}>
+                    <div className="dropdown-icon" onClick={toggleOtherDropdown} style={{ paddingLeft: "10px" }}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-grid-3x3-gap-fill iconsCustomMargin changeColorSvg" viewBox="0 0 16 16">
                             <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
                         </svg>
