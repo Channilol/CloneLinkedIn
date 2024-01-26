@@ -7,7 +7,9 @@
     width: 100%;
     box-sizing: border-box;
     min-height: 70px;
-    z-index: 1000000;
+    position: sticky;
+    top:0;
+    z-index: 1000000000;
 }
 
 #jobsHeader>svg:first-of-type {
@@ -214,6 +216,11 @@
     outline: 1px solid #0a66c2;
 }
 
+#inputLocationNavJobs:focus,
+.inputSearchNavJobs:focus {
+    outline: 2px solid #0a66c2;
+}
+
 #buttonNav {
     display: none;
     width: 70px;
@@ -285,7 +292,7 @@
     position: absolute;
     top: 10;
     z-index: 100001;
-    height: 65px;
+    height: 67px;
     background-color: white;
 }
 
