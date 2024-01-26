@@ -76,8 +76,8 @@ const ConsigliPerTe = () => {
             <div key={index} className="cardConsigli">
               <img src="./logo192.png" alt="img" />
               <div className="cardConsigliDettagli">
-                <h3>{job.title}</h3>
-                <p>{job.company_name}</p>
+                <h3 className="textTooLong">{job.title}</h3>
+                <p className="textTooLong">{job.company_name}</p>
               </div>
               <div>
                 <button className="card-buttonSegui">
