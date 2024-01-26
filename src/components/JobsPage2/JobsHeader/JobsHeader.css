@@ -7,6 +7,7 @@
     width: 100%;
     box-sizing: border-box;
     min-height: 70px;
+    z-index: 1000000;
 }
 
 #jobsHeader>svg:first-of-type {
@@ -320,7 +321,6 @@
     #iconLocationMobileJobs {
         display: none;
     }
-
 }
 
 @media screen and (min-width:380px) and (max-width: 410px) {

@@ -21,6 +21,7 @@
 
 .experienceCardRight h2, .experienceCardRight p {
     max-width: 80%;
+    overflow-wrap: anywhere;
 }
 
 .editAndDeleteBtns {
