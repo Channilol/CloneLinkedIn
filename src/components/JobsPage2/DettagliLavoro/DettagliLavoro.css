@@ -32,19 +32,23 @@
 
 #button1 {
     padding: 5px 10px 5px 10px;
-    border: 1.5px solid rgb(8, 8, 150);
+    border: 1.5px solid #0a66c2;
     border-radius: 25px;
     margin-right: 10px;
-    background-color: rgb(8, 8, 150);
+    background-color: #0a66c2;
+    font-size: 1.2em;
     color: white;
+    margin-bottom: 15px;
 }
 #button2 {
     padding: 5px 10px 5px 10px;
-    border: 1.5px solid rgb(8, 8, 150);
+    border: 1.5px solid #0a66c2;
     border-radius: 25px;
     margin-right: 10px;
+    font-size: 1.2em;
     background-color: white;
-    color: rgb(8, 8, 150);
+    color:#0a66c2;
+    margin-bottom: 15px;
 }
 
 #descrizione h2 {

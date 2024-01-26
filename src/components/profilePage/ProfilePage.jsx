@@ -19,7 +19,7 @@ import MyHeader from '../MyHeader/MyHeader'
 const ProfilePage = () => {
     const iduser = useParams();
     const loggedUser = useSelector((state) => state.user.userFetch)
-    const apiUrl = `https://striveschool-api.herokuapp.com/api/profile/${iduser.user}`
+    const apiUrl = `https://striveschool-api.herokuapp.com/api/profile/me`
     const token = {
         method: 'GET',
         headers: {

@@ -4,16 +4,20 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import EditPost from '../EditPost/EditPost'
 import DeletePost from '../DeletePost/DeletePost'
-import CommentiCard from '../CommentiCard/CommentiCard'
+import CommentContainer from '../CommentContainer/CommentContainer'
 
 const PostCard = ({datiPost}) => {
-    const [commentToSend, setCommentToSend] = useState('')
     const [isMyPost, setIsMyPost] = useState(false)
     const [isCommentBoxOn, setIsCommentBoxOn] = useState(false)
     const [isEditPostOn, setIsEditPostOn] = useState(false)
     const [isDeletePostOn, setIsDeletePostOn] = useState(false)
     const loggedUser = useSelector((state) => state.user.userFetch)
     const navigate = useNavigate()
+
+    const handleImageClick = () => {
+        navigate(`/profile/${datiPost.user._id}`);
+        window.scrollTo(0, 0);
+      };
 
     const handleCommentBox = () => {
         if(isCommentBoxOn) {
@@ -67,9 +71,9 @@ const PostCard = ({datiPost}) => {
             </div>
             ) : ''}
             <div className='postCardTop'>
-                <img src={datiPost.user.image} alt='immagine post' onClick={() => navigate(`/profile/${datiPost.user._id}`)}/>
+                <img src={datiPost.user.image} alt='immagine post' onClick={handleImageClick}/>
                 <div className='postCardTopText'>
-                    <h3>{datiPost.user.username}</h3>
+                    <h3 onClick={handleImageClick}>{datiPost.user.username}</h3>
                     <p>{datiPost.user.title}</p>
                     <p>{datiPost.createdAt}</p>
                 </div>
@@ -116,18 +120,7 @@ const PostCard = ({datiPost}) => {
                     </div>  
                 </div>
                 {isCommentBoxOn ? (
-                    <div className='postCommentBox'>
-                        <div className='postNewCommentInput'>
-                        <img src={loggedUser.image} alt='imgProfilo' />
-                        <form>
-                           <input type="text" name="commentInput" id="commentInput" value={commentToSend} onChange={(e) => setCommentToSend(e.target.value)}/> 
-                        </form>
-                        </div>
-                        <div className='postComments'>
-                            <CommentiCard />
-                            <CommentiCard />
-                        </div>
-                    </div>
+                    <CommentContainer postData={datiPost}/>
                 ) : ''}
 
             </div>

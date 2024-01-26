@@ -33,7 +33,7 @@ const NewPostForm = ({close}) => {
                 dispatch(getPostFetchAction(apiUrlPost, token))
                 alert('Post creato con successo')
             } else {
-                console.log('Errore nel caricamento dati')
+                console.log('Errore nel caricamento dei dati')
             }
         } catch(err) {
             console.log('Errore:', err)
@@ -63,7 +63,7 @@ const NewPostForm = ({close}) => {
                 </div>
                 <form onSubmit={(e) => handleSubmitPost(e)}>
                     <textarea placeholder='Di cosa vorresti parlare?' value={newPostText.text} onChange={(e) => setNewPostText({text: e.target.value})}/>
-                    <button className='publishPostBtn' disabled={newPostText.length < 3}>Pubblica</button>
+                    <button className='publishPostBtn' disabled={newPostText.text.length < 3}>Pubblica</button>
                 </form>
             </div>
         </div>

@@ -1,6 +1,19 @@
 import "./CommentiCard.css";
 
-const CommentiCard = () => {
+const CommentiCard = ({datiComment}) => {
+  const dateTimeString = datiComment.createdAt;
+  const dateTime = new Date(dateTimeString);
+
+  const hours = dateTime.getHours().toString().padStart(2, '0');
+  const minutes = dateTime.getMinutes().toString().padStart(2, '0');
+  const time = `${hours}:${minutes}`;
+
+  const day = dateTime.getDate().toString().padStart(2, '0');
+  const month = (dateTime.getMonth() + 1).toString().padStart(2, '0');
+  const year = dateTime.getFullYear();
+  const date = `${day}-${month}-${year}`;
+
+
   return (
     <div>
       <div id="contenitoreFotoCommento">
@@ -23,24 +36,14 @@ const CommentiCard = () => {
         <div id="contenitoreCommento">
           <div id="nome">
             <p id="h4">
-              <strong>marwane najim</strong> - 3° e oltre <br />
+              <strong>{datiComment.author}</strong>
             </p>
             <p id="pGiorno">
-              1 giorno{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-three-dots"
-                viewBox="0 0 16 16"
-              >
-                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
-              </svg>
+              {time} del {date}
             </p>
           </div>
-          <p id="pPiccolo">Tecnico audio-visivo presso alumma international</p>
-          <p>We also have a touch of humor.</p>
+          <p id="pPiccolo">Titolo utente</p>
+          <p>{datiComment.comment}</p>
           <p id="pBlu"><strong>Vedi traduzione</strong></p>
         </div>
       </div>

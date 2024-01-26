@@ -5,7 +5,7 @@
     border-radius: 10px;
     background-color: white;
     margin: 20px 0;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
 }
 
@@ -52,6 +52,7 @@
 .postCardBottom .postLikes {
     box-sizing: border-box;
     padding-left: 10px;
+    margin-bottom: 10px;
 }
 
 .postCardBottom .postLikes div {
@@ -79,50 +80,18 @@
     display: flex;
     cursor: pointer;
     opacity: 0.8;
-    transition: opacity 0.1s ease-in-out;
+    transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out
 }
 
-.postButton > div:hover {
+.postButtons > div:hover {
     opacity: 1;
-    background-color: red;
+    transform: scale(1.1);
 }
 
 .postCommentBox {
     margin-top: 7.5px;
     border-top: 1px solid #e0dfdb;
     padding-top: 7.5px;
-}
-
-.postCommentBox .postNewCommentInput {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.postCommentBox .postNewCommentInput img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.postCommentBox .postNewCommentInput form {
-    width: 82.5%;
-    display: flex;
-    justify-content: center;
-}
-
-.postCommentBox .postNewCommentInput form input {
-    width: 100%;
-    height: 40px;
-    border-radius: 50px;
-    border: 1px solid #e0dfdb;
-    box-sizing: border-box;
-    padding-left: 15px;
-}
-
-.postCommentBox .postNewCommentInput form input:focus {
-    outline: 2px solid #c9c8c4;
 }
 
 .editAndDeleteBtnsPost {
@@ -157,4 +126,8 @@
 
 .editAndDeleteBtnsPost button:last-of-type {
     background-color: firebrick;
+}
+
+.postCardTopText h3 {
+    cursor: pointer;
 }
