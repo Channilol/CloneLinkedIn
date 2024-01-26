@@ -134,7 +134,7 @@ const JobsHeader = () => {
                     </div>
                 )}
             </div>
-            <button id="buttonNav">Cerca</button>
+            <button id="buttonNav" onClick={(e) => handleHeaderSubmit(e)}>Cerca</button>
 
             <div id="boxIconMobileJobs" onClick={toggleMobileMenu}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#404040" className="bi bi-list" id="svgMobileMenu" viewBox="0 0 16 16" style={{ marginRight: "20px" }}>

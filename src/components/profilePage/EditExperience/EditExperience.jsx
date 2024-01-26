@@ -112,13 +112,13 @@ const EditExperience = ({experience, close}) => {
                 </div>
                 <div>
                     <label htmlFor="startDate">Data di inizio:</label>
-                    <input type="date" name="startDate" id="startDate" value={experienceData.startDate || ''} onChange={(e) => setExperienceData({
+                    <input type="date" name="startDate" id="startDate" value={experienceData.startDate ? experienceData.startDate.split('T')[0] : ''} onChange={(e) => setExperienceData({
                         ...experienceData, startDate: e.target.value
                     })}/>
                 </div>
                 <div>
                     <label htmlFor="endDate">Fino a:</label>
-                    <input type="date" name="endDate" id="endDate" value={experienceData.endDate || ''} onChange={(e) => setExperienceData({
+                    <input type="date" name="endDate" id="endDate" value={experienceData.endDate ? experienceData.endDate.split('T')[0] : ''} onChange={(e) => setExperienceData({
                         ...experienceData, endDate: e.target.value
                     })}/>
                 </div>

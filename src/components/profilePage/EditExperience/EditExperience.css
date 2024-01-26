@@ -2,7 +2,7 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 740px;
-    height: 90%;
+    height: 85%;
     padding: 25px;
     background-color: white;
     border: 1px solid #e0dfdb;
@@ -31,10 +31,14 @@
     position: relative;
 }
 
+.editExperience > div > h1 {
+    font-size: 1.5em;
+}
+
 .editExperience > form > .newExperienceUploadImg {
     position: absolute;
-    bottom: 25px;
-    left: 25px;
+    bottom: 15px;
+    left: 15px;
     z-index: 10;
 }
 
@@ -58,7 +62,7 @@
 }
 
 .editExperience form {
-    height: 95%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -72,6 +76,8 @@
 
 .editExperience > div:first-of-type button {
     cursor: pointer;
+    min-width: 40px;
+    min-height: 40px;
     width: 40px;
     height: 40px;
     display: flex;
