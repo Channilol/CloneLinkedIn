@@ -213,6 +213,11 @@
     outline: 1px solid #0a66c2;
 }
 
+#inputLocationNavJobs:focus,
+.inputSearchNavJobs:focus {
+    outline: 2px solid #0a66c2;
+}
+
 #buttonNav {
     display: none;
     width: 70px;
@@ -284,7 +289,7 @@
     position: absolute;
     top: 10;
     z-index: 100001;
-    height: 65px;
+    height: 67px;
     background-color: white;
 }
 
