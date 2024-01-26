@@ -51,7 +51,6 @@ const CommentiCard = ({datiComment}) => {
   useEffect(() => {
     if(datiComment.author === 'BW3Team6@epicode.it') {
       setIsMyComment(true)
-      console.log(datiComment)
     }
   },[datiComment])
 

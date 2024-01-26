@@ -87,10 +87,6 @@ const ProfiloTop = () => {
         setIsEditOpen(false)
     }
 
-    useEffect(() => {
-        console.log('id user è:' + iduser.user)
-    },[iduser])
-
     return (
         <div className='profiloTop'>
             {isEditOpen ? (<EditProfile close={handleCloseEditPage}/>) : ''}

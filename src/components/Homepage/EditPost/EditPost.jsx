@@ -84,11 +84,6 @@ const EditPost = ({postData, close}) => {
         close()
     }
 
-    useEffect(() => {
-        console.log(postData._id)
-        console.log(postPic)
-    },[postPic])
-
     return (
         <div className='editPost'>
             <div>

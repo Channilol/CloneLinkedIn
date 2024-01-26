@@ -21,7 +21,9 @@ Everyone contributed on the project with creating the components and building th
 
 The project was born as a LinkedIn clone desktop web app, but then we decided to also make it fully responsive.
 
-## TEAM 6 THE BEST
+## IMPORTANT!!!
+
+Open opera browser and type any word on the url after the normal one
 
 ### `npm start`
 

@@ -7,6 +7,7 @@ import JobsPage2 from './components/JobsPage2/JobsPage2';
 import { useDispatch } from 'react-redux';
 import { getUserFetchAction } from './redux/actions';
 import { useEffect } from 'react';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 function App() {
   const apiUrl = `https://striveschool-api.herokuapp.com/api/profile/me`
@@ -28,6 +29,7 @@ function App() {
       <div className="App">   
         <Routes>
           <Route path='/' element={<Homepage/>}/>
+          <Route path='*' element={<ErrorPage />} />
           <Route path='/jobspage' element={<Jobspage />} />
           <Route path='/jobspage2/:searchquery' element={<JobsPage2 />} />
           <Route path='/profile/:user' element={<ProfilePage/>}/>
