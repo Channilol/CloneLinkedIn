@@ -44,9 +44,9 @@ const ActivityComponent = () => {
         style={{ borderColor: "gray", borderWidth: "0.5px", margin: "20px 0" }}
       />
 
-      <a href="#show-all" className="show-all-activities">
+      <p className="show-all-activities">
         Mostra tutte le attività
-      </a>
+      </p>
     </div>
   );
 };

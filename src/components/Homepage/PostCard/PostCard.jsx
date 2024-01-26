@@ -11,8 +11,17 @@ const PostCard = ({datiPost}) => {
     const [isCommentBoxOn, setIsCommentBoxOn] = useState(false)
     const [isEditPostOn, setIsEditPostOn] = useState(false)
     const [isDeletePostOn, setIsDeletePostOn] = useState(false)
+    const [howManyComments, setHowManyComments] = useState(0)
     const loggedUser = useSelector((state) => state.user.userFetch)
+    const comments = useSelector((state) => state.comments.comments)
     const navigate = useNavigate()
+
+    useEffect(() => {
+        const filteredComments = comments.filter(comment => comment.elementId === datiPost._id);
+        if(filteredComments.length > 0) {
+            setHowManyComments(filteredComments.length)
+        }
+    }, [comments, datiPost._id])
 
     const handleImageClick = () => {
         navigate(`/profile/${datiPost.user._id}`);
@@ -104,6 +113,7 @@ const PostCard = ({datiPost}) => {
                             <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8m0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5"/>
                         </svg>
                         <p>Commenta</p>
+                        <p className='howManyComments'>{howManyComments}</p>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgba(0,0,0,0.5)" className="bi bi-arrow-repeat" viewBox="0 0 16 16">

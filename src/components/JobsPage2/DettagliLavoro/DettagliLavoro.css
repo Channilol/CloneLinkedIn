@@ -5,8 +5,8 @@
     padding: 20px;
     overflow-y: scroll;
     height: 100vh;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 67px;
     box-sizing: border-box;
 }
 
@@ -101,4 +101,11 @@
 
 .dettagliLavoroTop svg:hover {
     transform: scale(1.2);
+}
+
+@media screen and (min-width:640px){
+    #contenitorePrincipale {
+        position: sticky;
+        top: 0;
+    }
 }

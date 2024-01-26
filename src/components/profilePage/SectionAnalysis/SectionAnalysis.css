@@ -21,7 +21,6 @@
   align-items: center;
 }
 .FirDiv h3{
-  margin: 10px;
   display: flex;
   align-items: center;
 }
@@ -30,10 +29,6 @@
   align-items: center;
   justify-content: center;
   margin-left: 5px;
-}
-.FirDiv a{
-  color: rgba(0,0,0,0.5);
-  font-size: 0.8em;
 }
 .FirDiv svg {
   vertical-align: bottom;
@@ -44,10 +39,17 @@
 .FirDiv p:nth-of-type(2){
     font-weight: 600;
 }
+
 .FirDiv p {
-  margin: 10px;
+  margin: 10px 0 10px 10px;
 }
 
 .FirDiv h2 {
   margin: 10px;
+}
+
+.FirDiv h3 .showMoreAnalysis {
+  cursor: pointer;
+  color: rgba(0,0,0,0.5);
+  font-size: 0.8em;
 }

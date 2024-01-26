@@ -36,7 +36,8 @@ const SectionAnalysis = () => {
         <p>Aggiorna il tuo profilo per attrarre visitatori</p>
       </div>
       <div className="ThiDiv">
-        <h3><a href="#">Mostra tutte le analisi </a>
+        <h3>
+          <p className="showMoreAnalysis">Mostra tutte le analisi</p>
           <i>
             <svg
               xmlns="http://www.w3.org/2000/svg"

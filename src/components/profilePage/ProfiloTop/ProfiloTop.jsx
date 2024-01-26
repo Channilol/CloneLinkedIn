@@ -165,6 +165,13 @@ const ProfiloTop = () => {
                     </p>
                     <p>
                     {iduser.user === '65ae3ed3600be100183a8698' ? (
+                        loggedUser.bio
+                    ) : (
+                        userToShow.bio
+                    )}
+                    </p>
+                    <p>
+                    {iduser.user === '65ae3ed3600be100183a8698' ? (
                         <>
                         {loggedUser.area} • <Link to='/'>Informazioni di contatto</Link>
                         </>
@@ -173,7 +180,7 @@ const ProfiloTop = () => {
                         {userToShow.area} • <Link to='/'>Informazioni di contatto</Link>
                         </>
                         )} 
-                        </p>
+                    </p> 
                 </div>
                 {iduser.user === '65ae3ed3600be100183a8698' ? (
                     <div className='profileButtons'>
