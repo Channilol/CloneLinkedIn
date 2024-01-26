@@ -50,7 +50,7 @@ const Risorse = () => {
       </div>
       <div className="ThiDiv">
         <h3>
-          <a href="#">Mostra tutte le risorse (X) </a>
+          <p className="showMoreSectAnalysis">Mostra tutte le risorse</p>
           <i>
             <svg
               xmlns="http://www.w3.org/2000/svg"

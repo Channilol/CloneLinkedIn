@@ -257,11 +257,11 @@ const MyHeader = () => {
                     {isDropdownOpen && (
                         <div className="customNavDropdown dropdown-content">
 
-                            <div>
+                            <div className='dropdownMenuTop'>
                                 <div className='firstSectionDropdown'>
-                                    {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
+                                    {loggedUser ? <img src={loggedUser.image} alt='profilePic' onClick={() => navigate('/profile/me')}/> : <p>Loading...</p>}
                                     <div className='textFirstSection'>
-                                        <p className="NomeSectionDropdown">{loggedUser ? loggedUser.username : 'Loading...'}</p>
+                                        <p className="NomeSectionDropdown" onClick={() => navigate('/profile/me')}>{loggedUser ? loggedUser.username : 'Loading...'}</p>
                                         <p>{loggedUser.title}</p>
                                     </div>
                                 </div>

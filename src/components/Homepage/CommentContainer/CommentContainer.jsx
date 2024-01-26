@@ -71,7 +71,7 @@ const CommentContainer = ({postData}) => {
                         postComments.map((comment) => {
                             return <CommentiCard key={comment._id} datiComment={comment} />
                         })
-                    ) : <p>Ancora nessun commento</p>}
+                    ) : <p className='noComments'>Scrivi tu il primo commento</p>}
                 </div>
             </div>
         </div>

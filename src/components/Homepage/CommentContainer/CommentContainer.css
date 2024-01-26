@@ -29,3 +29,9 @@
 .postCommentBox .postNewCommentInput form input:focus {
     outline: 2px solid #c9c8c4;
 }
+
+.noComments {
+    font-size: 0.9em;
+    color: rgba(0,0,0,0.5);
+    margin: 15px 0 5px 0;
+}
