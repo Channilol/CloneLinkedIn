@@ -1,6 +1,9 @@
 import "./CommentiCard.css";
+import { useState, useEffect } from "react";
 
 const CommentiCard = ({datiComment}) => {
+  const [isMyComment, setIsMyComment] = useState(false)
+
   const dateTimeString = datiComment.createdAt;
   const dateTime = new Date(dateTimeString);
 
@@ -13,6 +16,11 @@ const CommentiCard = ({datiComment}) => {
   const year = dateTime.getFullYear();
   const date = `${day}-${month}-${year}`;
 
+  useEffect(() => {
+    if(datiComment.author === 'BW3Team6@epicode.it') {
+      setIsMyComment(true)
+    }
+  },[datiComment])
 
   return (
     <div>
@@ -46,10 +54,16 @@ const CommentiCard = ({datiComment}) => {
           <p>{datiComment.comment}</p>
           <p id="pBlu"><strong>Vedi traduzione</strong></p>
         </div>
+        {isMyComment ? (
+          <div className="">
+
+          </div>
+        ) : ''}
       </div>
+      {!isMyComment ? (
       <div id="consiglia">
         <p>Consiglia | Rispondi</p>
-      </div>
+      </div>) : ''} 
     </div>
   );
 };
