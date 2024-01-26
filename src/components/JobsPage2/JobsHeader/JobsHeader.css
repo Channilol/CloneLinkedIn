@@ -7,7 +7,9 @@
     width: 100%;
     box-sizing: border-box;
     min-height: 70px;
-    z-index: 1000000;
+    position: sticky;
+    top:0;
+    z-index: 1000000000;
 }
 
 #jobsHeader>svg:first-of-type {
