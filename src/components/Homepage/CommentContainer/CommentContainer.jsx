@@ -53,10 +53,6 @@ const CommentContainer = ({postData}) => {
         setPostComments(filteredComments);
     }, [comments, postData._id]);
 
-    useEffect(() => {
-        console.log(postComments)
-    },[postComments])
-
     return (
         <div className='commentsContainer'>
             <div className='postCommentBox'>

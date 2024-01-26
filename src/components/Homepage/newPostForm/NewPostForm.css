@@ -94,7 +94,6 @@
     border: none;
     font-size: 1.5em;
     resize: none;
-    padding-bottom: 50px;
     border-bottom: 1px solid #e0dfdb;
 }
 
@@ -131,3 +130,8 @@
     transform: none;
 }
 
+@media screen and (min-width:675px) {
+    .newPostForm {
+        transform: translate(-50%, -65%);
+    }
+}

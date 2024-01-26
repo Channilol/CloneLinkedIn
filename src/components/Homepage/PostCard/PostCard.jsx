@@ -15,12 +15,21 @@ const PostCard = ({datiPost}) => {
     const loggedUser = useSelector((state) => state.user.userFetch)
     const comments = useSelector((state) => state.comments.comments)
     const navigate = useNavigate()
+    const dateTimeString = datiPost.createdAt;
+    const dateTime = new Date(dateTimeString);
+
+    const hours = dateTime.getHours().toString().padStart(2, '0');
+    const minutes = dateTime.getMinutes().toString().padStart(2, '0');
+    const time = `${hours}:${minutes}`;
+
+    const day = dateTime.getDate().toString().padStart(2, '0');
+    const month = (dateTime.getMonth() + 1).toString().padStart(2, '0');
+    const year = dateTime.getFullYear();
+    const date = `${day}/${month}/${year}`;
 
     useEffect(() => {
         const filteredComments = comments.filter(comment => comment.elementId === datiPost._id);
-        if(filteredComments.length > 0) {
-            setHowManyComments(filteredComments.length)
-        }
+        setHowManyComments(filteredComments.length)
     }, [comments, datiPost._id])
 
     const handleImageClick = () => {
@@ -60,6 +69,12 @@ const PostCard = ({datiPost}) => {
         }
     },[])
 
+    useEffect(() => {
+        if(isEditPostOn) {
+            setIsDeletePostOn(false)
+        }
+    },[isEditPostOn])
+
     return (
         <div className='postCard'>
             {isDeletePostOn ? (<DeletePost postData={datiPost} close={handleDeletePost}/>) : ''}   
@@ -84,11 +99,11 @@ const PostCard = ({datiPost}) => {
                 <div className='postCardTopText'>
                     <h3 onClick={handleImageClick}>{datiPost.user.username}</h3>
                     <p>{datiPost.user.title}</p>
-                    <p>{datiPost.createdAt}</p>
+                    <p>{time} del {date}</p>
                 </div>
             </div>   
             <div className='postCardCenter'>
-                <p>{datiPost.text}</p>
+                <p className='postText'>{datiPost.text}</p>
                 {datiPost.image ? (<img src={datiPost.image} alt='fotoPost' />) : ''}
             </div>  
             <div className='postCardBottom'>

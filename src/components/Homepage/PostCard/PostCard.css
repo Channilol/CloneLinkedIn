@@ -47,6 +47,8 @@
 
 .postCardCenter p {
     margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .postCardBottom .postLikes {

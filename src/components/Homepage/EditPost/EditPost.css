@@ -94,7 +94,6 @@
     border: none;
     font-size: 1.5em;
     resize: none;
-    padding-bottom: 50px;
     border-bottom: 1px solid #e0dfdb;
 }
 
@@ -129,4 +128,10 @@
 
 .editPost > div > form > .publishPostBtn:disabled:hover {
     transform: none;
+}
+
+@media screen and (min-width:675px) {
+    .editPost {
+        transform: translate(-50%, -65%);
+    }
 }
