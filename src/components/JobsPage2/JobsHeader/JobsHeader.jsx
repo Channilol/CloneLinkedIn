@@ -16,11 +16,11 @@ const JobsHeader = () => {
 
     const handleHeaderSubmit = (e) => {
         e.preventDefault()
-        if(jobSearchQuery) {
+        if (jobSearchQuery) {
             navigate(`/jobspage2/${jobSearchQuery}`)
             setJobSearchQuery('')
         }
-    } 
+    }
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -102,18 +102,18 @@ const JobsHeader = () => {
                     </svg>
                 </div>
                 <form onSubmit={(e) => handleHeaderSubmit(e)}>
-                    <input type="text" className='inputSearchNavJobs' placeholder="Cerca offerte di lavoro /..." onClick={handleSearchIconClick} value={jobSearchQuery} onChange={(e) => setJobSearchQuery(e.target.value)}/>
+                    <input type="text" className='inputSearchNavJobs' placeholder="Cerca offerte di lavoro /..." onClick={handleSearchIconClick} value={jobSearchQuery} onChange={(e) => setJobSearchQuery(e.target.value)} />
                 </form>
-                
+
                 <div id="iconLocationNavJobs">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16">
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                     </svg>
                 </div>
                 <form onSubmit={(e) => handleHeaderSubmit(e)}>
-                   <input type="text" id='inputLocationNavJobs' placeholder="Città, stato o CAP" onClick={handleSearchIconClick} /> 
+                    <input type="text" id='inputLocationNavJobs' placeholder="Città, stato o CAP" onClick={handleSearchIconClick} />
                 </form>
-                
+
 
                 {isSearchVisible && (
                     <div id="boxSearchMobileJobs">
@@ -121,14 +121,14 @@ const JobsHeader = () => {
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                         </svg>
                         <form onSubmit={(e) => handleHeaderSubmit(e)}>
-                          <input type="text" className="inputSearchMobileJobs" placeholder="Cerca offerte di lavoro /..." value={jobSearchQuery} onChange={(e) => setJobSearchQuery(e.target.value)}/>  
+                            <input type="text" className="inputSearchMobileJobs" placeholder="Cerca offerte di lavoro /..." value={jobSearchQuery} onChange={(e) => setJobSearchQuery(e.target.value)} />
                         </form>
-                        
+
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#404040" className="bi bi-geo-alt-fill svgPointer" viewBox="0 0 16 16"
                             id="iconLocationMobileJobs">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                         </svg>
-                        <form  onSubmit={(e) => handleHeaderSubmit(e)}>
+                        <form onSubmit={(e) => handleHeaderSubmit(e)}>
                             <input type="text" className='inputSearchMobileJobs' id="locationSearchOnly" placeholder="Città, stato o CAP" style={{ marginLeft: "20px" }} />
                         </form>
                     </div>
@@ -222,14 +222,14 @@ const JobsHeader = () => {
                     <div className="divIconsMenuNav" ref={dropdownRef}>
 
                         <div className='dropdown-icon' onClick={toggleDropdown} >
-                        {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
+                            {loggedUser ? <img src={loggedUser.image} /> : <p>Loading...</p>}
                         </div>
                         {isDropdownOpen && (
                             <div className="customNavDropdown dropdown-content">
 
-                                <div>
+                                <div className='borderDivMenu'>
                                     <div className='firstSectionDropdown'>
-                                    {loggedUser ? <img src={loggedUser.image}/> : <p>Loading...</p>}
+                                        {loggedUser ? <img src={loggedUser.image} /> : <p>Loading...</p>}
                                         <div className='textFirstSection'>
                                             <p className="NomeSectionDropdown">{loggedUser ? loggedUser.username : 'Loading...'}</p>
                                             <p>{loggedUser.title}</p>
@@ -238,21 +238,27 @@ const JobsHeader = () => {
                                     <button className="buttonDropdown" onClick={() => navigate('/profile/me')}>Visualizza profilo</button>
                                 </div>
 
-                                <hr />
-                                <h6 className="titleDropdown">Account</h6>
-                                <ul>
-                                    <li><a href="#" className="linkDropdown">Impostazioni e Privacy</a></li>
-                                    <li><a href="#" className="linkDropdown">Guida</a></li>
-                                    <li><a href="#" className="linkDropdown">Lingua</a></li>
-                                </ul>
-                                <hr />
-                                <h6 className="titleDropdown">Gestisci</h6>
-                                <ul>
-                                    <li><a href="#" className="linkDropdown">Post e attività</a></li>
-                                    <li><a href="#" className="linkDropdown">Account per la pubblicazione</a></li>
-                                </ul>
-                                <hr />
-                                <p><a href="#" className="linkDropdown">Esci</a></p>
+
+                                <div className='borderDivMenu'>
+                                    <h6 className="titleDropdown">Account</h6>
+                                    <ul>
+                                        <li><p className="linkDropdown">Impostazioni e Privacy</p></li>
+                                        <li><p className="linkDropdown">Guida</p></li>
+                                        <li><p className="linkDropdown">Lingua</p></li>
+                                    </ul>
+                                </div>
+
+                                <div className='borderDivMenu'>
+                                    <h6 className="titleDropdown">Gestisci</h6>
+                                    <ul>
+                                        <li><p className="linkDropdown">Post e attività</p></li>
+                                        <li><p className="linkDropdown">Account per la pubblicazione</p></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <p className="linkDropdown">Esci</p>
+                                </div>
                             </div>
                         )}
                     </div>
